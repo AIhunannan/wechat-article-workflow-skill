@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+draft_result.json
+draft_error.json
+article_wechat_uploaded.html
+images/
+*.log
+.env
+config.yaml
