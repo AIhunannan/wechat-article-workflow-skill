@@ -10,7 +10,8 @@
 
 - 将原始想法、提纲或初稿润色成更自然、更有人味的公众号文章。
 - 保留作者个人判断，减少 AI 味、空话和模板感。
-- 生成或选择封面图、正文图，并处理“封面图是否也要进入正文”的问题。
+- 把标题当作传播杠杆处理，优先生成更抓眼球、更有转发欲的标题。
+- 生成或选择 3-5 张精准匹配正文的图片，并处理“封面图是否也要进入正文”的问题。
 - 生成微信公众号兼容的 HTML，尽量使用内联样式，减少草稿箱排版丢失。
 - 使用 `md2wechat inspect` 检查标题、作者、摘要、图片和草稿发布条件。
 - 通过微信官方接口上传正文图片、上传封面素材并创建草稿。
@@ -98,15 +99,42 @@ wechat:
 1. 收集作者原始想法、提纲或初稿。
 2. 润色成自然、克制、有观点的公众号文案。
 3. 生成 `article.md`，写入标题、作者、摘要。
-4. 控制标题不超过 32 字，摘要不超过 128 字。
-5. 生成或选择封面图和正文图。
-6. 生成微信公众号安全 HTML，优先使用内联样式。
-7. 使用 `md2wechat inspect` 检查草稿发布条件。
-8. 上传正文图片到微信图床。
-9. 上传封面图为永久素材。
-10. 调用微信草稿箱接口创建草稿。
-11. 保存 `draft_result.json` 或 `draft_error.json`。
-12. 归档文章、HTML、图片和发布信息。
+4. 生成 5-10 个标题候选，优先选择最有好奇心、具体性和转发冲动的标题。
+5. 控制标题不超过 32 字，摘要不超过 128 字。
+6. 生成或选择 3-5 张精准匹配正文段落的图片。
+7. 生成微信公众号安全 HTML，优先使用内联样式。
+8. 使用 `md2wechat inspect` 检查草稿发布条件。
+9. 上传正文图片到微信图床。
+10. 上传封面图为永久素材。
+11. 调用微信草稿箱接口创建草稿。
+12. 保存 `draft_result.json` 或 `draft_error.json`。
+13. 归档文章、HTML、图片和发布信息。
+
+## 标题策略
+
+标题不是文章标签，而是分发入口。工作流默认把标题当作增长杠杆处理。
+
+好标题通常具备至少一个特点：
+
+- 有具体数字，例如“100个蓝盒子”“24小时”“7000万阅读”。
+- 有强反差，例如“不是从车库开始的，而是从一个小实验开始”。
+- 有隐藏起点，例如“大公司诞生前的小作品”。
+- 有反常识判断，例如“融资不是创业的起点”。
+- 有名人或事件钩子，例如乔布斯、沃兹、硅谷、OpenAI、Anthropic。
+
+避免过平的标题，例如“读XX有感”“关于XX的思考”“XX给我的启发”。如果标题不够抓人，应先改标题，再发草稿。
+
+## 配图策略
+
+每篇文章默认保持 3-5 张正文图。图片必须和内容精确匹配，不能只是装饰。
+
+推荐组合：
+
+- 1 张封面图：承担第一眼吸引力。
+- 1-2 张真实图片：增强可信度，例如实物、书、客户现场、产品、截图。
+- 1-2 张概念图：解释核心模型、冲突、流程、方法论或产品价值。
+
+每张图都应该有明确任务：证明真实性、解释概念、制造情绪、展示对象、总结模型。不要使用廉价未来感、随机机器人、空泛商务图标或和段落无关的图片。
 
 ## 文章目录建议
 
@@ -119,7 +147,9 @@ YYYY-MM-DD_article_slug/
 ├── draft_error.json
 └── images/
     ├── cover.png
-    └── body_01.png
+    ├── body_01.png
+    ├── body_02.png
+    └── body_03.png
 ```
 
 ## 发布脚本用法
@@ -210,7 +240,8 @@ Reusable Codex Skill for turning rough notes into polished WeChat Official Accou
 
 - Polish raw notes, outlines, or drafts into natural WeChat articles.
 - Preserve the author's point of view while reducing AI-like tone.
-- Generate or select cover and body images.
+- Treat the title as a distribution lever and create more clickable, shareable headline candidates.
+- Generate or select 3-5 images that precisely match the article's paragraphs and arguments.
 - Handle the difference between WeChat cover images and in-body images.
 - Build WeChat-compatible HTML with inline styles.
 - Use `md2wechat inspect` to check title, author, digest, images, and draft readiness.
@@ -299,15 +330,42 @@ Important:
 1. Collect the author's raw notes, outline, or draft.
 2. Polish the article into a natural, concise, opinionated draft.
 3. Create `article.md` with title, author, and digest.
-4. Keep title under 32 characters and digest under 128 characters.
-5. Generate or choose cover and body images.
-6. Build WeChat-safe HTML with inline styles.
-7. Run `md2wechat inspect` to verify draft readiness.
-8. Upload in-body images to WeChat.
-9. Upload the cover image as permanent material.
-10. Create a WeChat draft through the draft API.
-11. Save `draft_result.json` or `draft_error.json`.
-12. Archive article files, images, HTML, and publication metadata.
+4. Create 5-10 title candidates and choose the one with the strongest curiosity gap, specificity, and forwarding impulse.
+5. Keep title under 32 characters and digest under 128 characters.
+6. Generate or choose 3-5 images that match specific paragraphs or arguments.
+7. Build WeChat-safe HTML with inline styles.
+8. Run `md2wechat inspect` to verify draft readiness.
+9. Upload in-body images to WeChat.
+10. Upload the cover image as permanent material.
+11. Create a WeChat draft through the draft API.
+12. Save `draft_result.json` or `draft_error.json`.
+13. Archive article files, images, HTML, and publication metadata.
+
+## Title Strategy
+
+The title is not just a label. It is the entry point for distribution.
+
+Strong WeChat titles usually include at least one of these hooks:
+
+- Concrete numbers, such as "100 prototypes", "24 hours", or "70 million reads".
+- Sharp contrast, such as "it did not start in the garage".
+- Hidden origin stories, such as the small experiment before a major company.
+- Counterintuitive claims, such as "funding is not the starting point".
+- Famous people, companies, or events, such as Steve Jobs, Wozniak, Silicon Valley, OpenAI, or Anthropic.
+
+Avoid flat titles like "Thoughts on X", "Reflections after reading X", or "What X taught me" unless the user explicitly wants a quiet diary tone. If the title feels weak, revise the title first before publishing.
+
+## Image Strategy
+
+Default to 3-5 in-body images per article. Images must precisely match the content, not decorate it.
+
+Recommended mix:
+
+- 1 cover image for first-impression value.
+- 1-2 real images for authenticity, such as objects, books, customer scenes, products, or screenshots.
+- 1-2 conceptual images to explain the model, conflict, process, methodology, or product value.
+
+Every image needs a clear job: prove authenticity, explain a concept, create emotional atmosphere, show an object, or summarize a model. Avoid cheap sci-fi, random robots, generic business icons, or images loosely related to the paragraph.
 
 ## Recommended Article Folder
 
@@ -320,7 +378,9 @@ YYYY-MM-DD_article_slug/
 ├── draft_error.json
 └── images/
     ├── cover.png
-    └── body_01.png
+    ├── body_01.png
+    ├── body_02.png
+    └── body_03.png
 ```
 
 ## Publishing Helper
