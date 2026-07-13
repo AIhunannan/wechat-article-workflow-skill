@@ -10,11 +10,19 @@
 
 - 将原始想法、提纲或初稿润色成更自然、更有人味的公众号文章。
 - 保留作者个人判断，减少 AI 味、空话和模板感。
+- 把标题当作传播入口：先生成多个标题候选，再选择更具体、更有冲突和转发动力的版本，默认不超过 32 字。
 - 生成或选择封面图、正文图，并处理“封面图是否也要进入正文”的问题。
+- 默认准备 3-5 张与段落精准匹配的配图，避免为了装饰而堆图。
 - 生成微信公众号兼容的 HTML，尽量使用内联样式，减少草稿箱排版丢失。
 - 使用 `md2wechat inspect` 检查标题、作者、摘要、图片和草稿发布条件。
 - 通过微信官方接口上传正文图片、上传封面素材并创建草稿。
 - 支持把文章、HTML、图片、发布结果归档到 Obsidian 或其它知识库。
+
+### 主版本能力
+
+- 写作上优先编辑作者原始思考，保留第一人称、判断和真实案例。
+- 排版前先做标题、字数、图片、重复标题和敏感配置检查。
+- 发布失败时保存具体错误，尤其是微信公众号 `40164 invalid ip` 白名单错误，方便后续重试。
 
 ## 适用场景
 
@@ -96,12 +104,12 @@ wechat:
 ## 标准工作流
 
 1. 收集作者原始想法、提纲或初稿。
-2. 润色成自然、克制、有观点的公众号文案。
-3. 生成 `article.md`，写入标题、作者、摘要。
-4. 控制标题不超过 32 字，摘要不超过 128 字。
-5. 生成或选择封面图和正文图。
+2. 保留作者判断，去除填充语和明显 AI 写作痕迹。
+3. 生成 5-10 个标题候选，选择具体、有冲突和转发动力的标题。
+4. 生成 `article.md`，写入标题、作者、摘要，并检查长度限制。
+5. 生成或选择 3-5 张与正文精准匹配的封面图和正文图。
 6. 生成微信公众号安全 HTML，优先使用内联样式。
-7. 使用 `md2wechat inspect` 检查草稿发布条件。
+7. 使用 `md2wechat inspect` 检查标题、图片和草稿发布条件。
 8. 上传正文图片到微信图床。
 9. 上传封面图为永久素材。
 10. 调用微信草稿箱接口创建草稿。
@@ -210,12 +218,20 @@ Reusable Codex Skill for turning rough notes into polished WeChat Official Accou
 
 - Polish raw notes, outlines, or drafts into natural WeChat articles.
 - Preserve the author's point of view while reducing AI-like tone.
+- Treat the title as a distribution lever: generate several candidates and choose a specific, high-curiosity title under 32 characters by default.
 - Generate or select cover and body images.
+- Use 3-5 focused images by default, each matched to a specific paragraph or argument.
 - Handle the difference between WeChat cover images and in-body images.
 - Build WeChat-compatible HTML with inline styles.
 - Use `md2wechat inspect` to check title, author, digest, images, and draft readiness.
 - Upload body images, upload cover material, and create WeChat drafts through official APIs.
 - Archive article source, final copy, images, HTML, and publishing results.
+
+### Main Version Capabilities
+
+- Start from the author's own reflections and preserve first-person judgment and real cases.
+- Check title length, article length, image count, duplicate-title risk, and sensitive configuration before publishing.
+- Persist concrete publish failures, especially WeChat `40164 invalid ip` whitelist errors, so the draft can be retried safely.
 
 ## Use Cases
 
@@ -297,12 +313,12 @@ Important:
 ## Standard Workflow
 
 1. Collect the author's raw notes, outline, or draft.
-2. Polish the article into a natural, concise, opinionated draft.
-3. Create `article.md` with title, author, and digest.
-4. Keep title under 32 characters and digest under 128 characters.
-5. Generate or choose cover and body images.
+2. Preserve the author's judgment and remove filler and obvious AI writing traces.
+3. Generate 5-10 title candidates and choose a specific, high-curiosity title.
+4. Create `article.md` with title, author, digest, and length checks.
+5. Generate or choose 3-5 focused cover and body images.
 6. Build WeChat-safe HTML with inline styles.
-7. Run `md2wechat inspect` to verify draft readiness.
+7. Run `md2wechat inspect` to verify metadata, images, and draft readiness.
 8. Upload in-body images to WeChat.
 9. Upload the cover image as permanent material.
 10. Create a WeChat draft through the draft API.
