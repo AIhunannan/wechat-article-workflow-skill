@@ -10,6 +10,7 @@
 
 - 将原始想法、提纲或初稿润色成更自然、更有人味的公众号文章。
 - 保留作者个人判断，减少 AI 味、空话和模板感。
+- 文章不设固定字数，篇幅由主题、证据和论证完整度决定。
 - 把标题当作传播入口：先生成多个标题候选，再选择更具体、更有冲突和转发动力的版本，默认不超过 32 字。
 - 生成或选择封面图、正文图，并处理“封面图是否也要进入正文”的问题。
 - 默认准备 3-5 张与段落精准匹配的配图，避免为了装饰而堆图。
@@ -21,8 +22,16 @@
 ### 主版本能力
 
 - 写作上优先编辑作者原始思考，保留第一人称、判断和真实案例。
-- 排版前先做标题、字数、图片、重复标题和敏感配置检查。
+- 排版前先做标题、结构密度、图片、重复标题和敏感配置检查。
 - 发布失败时保存具体错误，尤其是微信公众号 `40164 invalid ip` 白名单错误，方便后续重试。
+
+### 长度与结构原则
+
+- 不设固定字数上限，也不默认要求控制在 1000 字以内。
+- 简单观点短写；研究、客户案例、技术解释和个人经历需要时可以充分展开。
+- 每一节都必须推进中心论点，删除重复表达、空洞过渡和无关背景。
+- 长文使用清晰的小标题与自然过渡，让读者快速浏览也能理解完整逻辑。
+- 只有用户明确提出字数要求时，才把字数作为硬性验收条件。
 
 ## 适用场景
 
@@ -106,7 +115,7 @@ wechat:
 1. 收集作者原始想法、提纲或初稿。
 2. 保留作者判断，去除填充语和明显 AI 写作痕迹。
 3. 生成 5-10 个标题候选，选择具体、有冲突和转发动力的标题。
-4. 生成 `article.md`，写入标题、作者、摘要，并检查长度限制。
+4. 生成 `article.md`，写入标题、作者、摘要，并检查主题是否集中、论证是否完整、段落是否重复；仅在用户明确提出时执行字数限制。
 5. 生成或选择 3-5 张与正文精准匹配的封面图和正文图。
 6. 生成微信公众号安全 HTML，优先使用内联样式。
 7. 使用 `md2wechat inspect` 检查标题、图片和草稿发布条件。
@@ -218,6 +227,7 @@ Reusable Codex Skill for turning rough notes into polished WeChat Official Accou
 
 - Polish raw notes, outlines, or drafts into natural WeChat articles.
 - Preserve the author's point of view while reducing AI-like tone.
+- Use no fixed article word count; length follows the topic, evidence, and completeness of the argument.
 - Treat the title as a distribution lever: generate several candidates and choose a specific, high-curiosity title under 32 characters by default.
 - Generate or select cover and body images.
 - Use 3-5 focused images by default, each matched to a specific paragraph or argument.
@@ -230,8 +240,16 @@ Reusable Codex Skill for turning rough notes into polished WeChat Official Accou
 ### Main Version Capabilities
 
 - Start from the author's own reflections and preserve first-person judgment and real cases.
-- Check title length, article length, image count, duplicate-title risk, and sensitive configuration before publishing.
+- Check title metadata limits, structural density, image count, duplicate-title risk, and sensitive configuration before publishing.
 - Persist concrete publish failures, especially WeChat `40164 invalid ip` whitelist errors, so the draft can be retried safely.
+
+### Length and Structure
+
+- There is no fixed word-count ceiling or default 1,000-character target.
+- Keep simple ideas short; allow research, customer cases, technical explanations, and personal experience the space they genuinely need.
+- Every section must advance the central thesis. Remove repetition, filler transitions, and irrelevant background.
+- Use clear headings and natural transitions in longer articles so the logic remains easy to scan.
+- Treat length as a hard acceptance criterion only when the user explicitly requests it.
 
 ## Use Cases
 
@@ -315,7 +333,7 @@ Important:
 1. Collect the author's raw notes, outline, or draft.
 2. Preserve the author's judgment and remove filler and obvious AI writing traces.
 3. Generate 5-10 title candidates and choose a specific, high-curiosity title.
-4. Create `article.md` with title, author, digest, and length checks.
+4. Create `article.md` with title, author, and digest, then check thesis focus, reasoning completeness, repetition, and structural density. Enforce a length limit only when the user explicitly requests one.
 5. Generate or choose 3-5 focused cover and body images.
 6. Build WeChat-safe HTML with inline styles.
 7. Run `md2wechat inspect` to verify metadata, images, and draft readiness.

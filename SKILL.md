@@ -10,10 +10,19 @@ This skill is for personal-brand WeChat articles. Default to editing the author'
 ## Voice Rules
 
 - Start from the user's notes and preserve his personal judgment.
-- Keep the article concise, usually under 1000 Chinese characters unless requested otherwise.
+- Do not impose a fixed word or character limit. Let the subject, evidence, and argument determine the necessary length.
 - Prefer plain, sharp, reflective writing over polished marketing language.
 - Avoid AI-heavy patterns: formulaic openings, over-explaining, slogan endings, excessive lists, and generic inspirational tone.
 - Use a local `humanizer-zh` skill when available and apply its rules.
+
+## Length and Structure Rules
+
+- Optimize for a clear theme and complete reasoning, not a target word count.
+- State the central judgment early. Every section should add evidence, a case, an explanation, a counterpoint, or a useful conclusion.
+- Remove repeated claims, empty transitions, generic background, and paragraphs that do not move the argument forward.
+- Use a short article when the idea is simple. Allow a longer article when research, customer cases, technical explanation, or personal experience genuinely needs space.
+- For longer articles, use clear section headings and natural transitions so readers can understand the argument even when scanning quickly.
+- Prefer the shortest version that fully explains the idea, but never cut necessary reasoning merely to stay under an arbitrary limit.
 
 ## Title Rules
 
@@ -37,7 +46,7 @@ This skill is for personal-brand WeChat articles. Default to editing the author'
    - `author`: configured author name.
    - `digest`: max 128 chars.
 3. Before locking the title, create a short title shortlist internally and pick the strongest one. If the user criticizes the title, revise the title first and republish if needed.
-4. Check length with non-whitespace count and keep it near the requested limit. Around 1000 Chinese characters is acceptable when the story needs breathing room.
+4. Perform a structure and density edit instead of enforcing a fixed length: confirm one clear thesis, complete reasoning, useful evidence, no repeated paragraphs, and no section that drifts from the theme. Honor an explicit length request only when the user provides one.
 5. Generate or select images:
    - Prefer Codex built-in image generation for article art unless the user explicitly requests a provider.
    - Generated images are usually under `$CODEX_HOME/generated_images/...`; copy the chosen images into the article `images\` folder and leave originals in place.
