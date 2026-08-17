@@ -14,6 +14,12 @@
 - 把标题当作传播入口：先生成多个标题候选，再选择更具体、更有冲突和转发动力的版本，默认不超过 32 字。
 - 生成或选择封面图、正文图，并处理“封面图是否也要进入正文”的问题。
 - 默认准备 3-5 张与段落精准匹配的配图，避免为了装饰而堆图。
+- 支持贴图优先：先制作 5-8 张有明确观点和证据的卡片，再按需要派生短视频和长文。
+- 支持 AI 项目雷达：从 X、GitHub、Kickstarter、TikTok、YouTube、中文互联网等来源筛选高增长、可复现、有实际价值的项目。
+- 用读者痛点、即时收益、证据、复现难度和原创判断筛选选题，避免只追热点和改写 README。
+- 用原创度审计卡检查一手贡献、五个信息增量、两个作者独有判断和事实边界，避免“低创作度”和空洞内容。
+- 把一个选题派生为图文卡片、短视频脚本、朋友圈、X 帖子和可选长文，但不在未经授权时自动发布。
+- 记录阅读、分享、收藏和净增粉，用真实数据调整选题与标题，而不是只看总阅读量。
 - 生成微信公众号兼容的 HTML，尽量使用内联样式，减少草稿箱排版丢失。
 - 使用 `md2wechat inspect` 检查标题、作者、摘要、图片和草稿发布条件。
 - 通过微信官方接口上传正文图片、上传封面素材并创建草稿。
@@ -23,6 +29,8 @@
 
 - 写作上优先编辑作者原始思考，保留第一人称、判断和真实案例。
 - 排版前先做标题、结构密度、图片、重复标题和敏感配置检查。
+- 按项目类型选择图文贴图、30-60 秒短视频、公众号长文或多形态发布。
+- 实用项目必须先建立证据卡，区分官方事实、第三方说法、作者实测和推断。
 - 发布失败时保存具体错误，尤其是微信公众号 `40164 invalid ip` 白名单错误，方便后续重试。
 
 ### 长度与结构原则
@@ -32,6 +40,14 @@
 - 每一节都必须推进中心论点，删除重复表达、空洞过渡和无关背景。
 - 长文使用清晰的小标题与自然过渡，让读者快速浏览也能理解完整逻辑。
 - 只有用户明确提出字数要求时，才把字数作为硬性验收条件。
+
+### 原创度与信息密度
+
+- AI 可以研究、质疑、整理和润色，但不能虚构作者经历、客户反馈或“我实测”。
+- 工具与行业文章应尽量包含一个一手贡献、两个主来源、一个非共识判断和一个可立即使用的资产。
+- 每约 250-300 个汉字应新增事实、案例、机制、比较、方法、结果、限制或决策中的至少一项。
+- 发布前复制并完成 `assets/originality_audit.md`；未通过则留在研究阶段，不靠扩写凑成文章。
+- 标题里的 Star、增长、金额、价格、速度和结果必须在发布当天重新核验并注明时间。
 
 ## 适用场景
 
@@ -55,8 +71,16 @@
 wechat-article-workflow-skill/
 ├── SKILL.md
 ├── README.md
+├── CHANGELOG.md
+├── assets/
+│   ├── daily_topic_radar.csv
+│   ├── growth_log.csv
+│   └── originality_audit.md
 ├── scripts/
 │   └── publish_wechat_direct.py
+├── templates/
+│   ├── evidence_card.md
+│   └── graphic_post.md
 └── .gitignore
 ```
 
@@ -112,28 +136,35 @@ wechat:
 
 ## 标准工作流
 
-1. 收集作者原始想法、提纲或初稿。
-2. 保留作者判断，去除填充语和明显 AI 写作痕迹。
-3. 生成 5-10 个标题候选，选择具体、有冲突和转发动力的标题。
-4. 生成 `article.md`，写入标题、作者、摘要，并检查主题是否集中、论证是否完整、段落是否重复；仅在用户明确提出时执行字数限制。
-5. 生成或选择 3-5 张与正文精准匹配的封面图和正文图。
-6. 生成微信公众号安全 HTML，优先使用内联样式。
-7. 使用 `md2wechat inspect` 检查标题、图片和草稿发布条件。
-8. 上传正文图片到微信图床。
-9. 上传封面图为永久素材。
-10. 调用微信草稿箱接口创建草稿。
-11. 保存 `draft_result.json` 或 `draft_error.json`。
-12. 归档文章、HTML、图片和发布信息。
+1. 收集作者原始想法，或运行多平台 AI 项目雷达。
+2. 扫描最近 24 小时至 30 天的一手来源，建立带时间戳的 `evidence_card.md`。
+3. 按 40 分制选择一个主选题和两个备选选题；不合格时宁可少报，不凑数。
+4. 锁定目标读者、搜索关键词、核心判断和内容形态。
+5. 贴图优先时先生成 `graphic_post.md`，锁定标题、封面和 5-8 张卡片。
+6. 需要深度时再生成 `article.md`；只有用户明确提出时才执行字数限制。
+7. 完成 `originality_audit.md`，确认一手贡献、五个信息增量、两个作者独有判断和 `PASS` 结果。
+8. 优先生成或选择真实证据图，再补充封面和解释性图片。
+9. 生成微信公众号安全 HTML 或图文贴图素材，使用平台原生结尾。
+10. 使用 `md2wechat inspect` 或图文负载检查标题、图片顺序和发布条件。
+11. 经用户授权后上传正文图、封面并创建微信草稿；其它平台同样需要单独授权。
+12. 保存 `draft_result.json` 或 `draft_error.json`，归档证据、文案、图片和发布信息。
+13. 派生短视频、朋友圈和 X 文案，但不自动发布。
+14. 发布后记录 2 小时、24 小时和 7 天数据，按净增粉与分享率复盘。
 
 ## 文章目录建议
 
 ```text
 YYYY-MM-DD_article_slug/
+├── evidence_card.md
+├── originality_audit.md
+├── graphic_post.md
 ├── article.md
 ├── article_wechat.html
 ├── article_wechat_uploaded.html
 ├── draft_result.json
 ├── draft_error.json
+├── distribution_kit.md
+├── growth_snapshot.csv
 └── images/
     ├── cover.png
     └── body_01.png
@@ -232,6 +263,11 @@ Reusable Codex Skill for turning rough notes into polished WeChat Official Accou
 - Generate or select cover and body images.
 - Use 3-5 focused images by default, each matched to a specific paragraph or argument.
 - Handle the difference between WeChat cover images and in-body images.
+- Build image-first `5-8` card posts before deriving video or long-form copy when reach is the primary goal.
+- Run an AI project radar across X, GitHub, Kickstarter, TikTok, YouTube, first-party product pages, and local-language sources.
+- Use an originality audit to require first-party contribution, five information gains, two author-specific judgments, and explicit claim boundaries.
+- Derive a short-video script, Moments post, X post, and optional long article from one verified evidence set without auto-publishing.
+- Track reads, shares, saves, and net followers so topic and title decisions improve from real data.
 - Build WeChat-compatible HTML with inline styles.
 - Use `md2wechat inspect` to check title, author, digest, images, and draft readiness.
 - Upload body images, upload cover material, and create WeChat drafts through official APIs.
@@ -241,6 +277,8 @@ Reusable Codex Skill for turning rough notes into polished WeChat Official Accou
 
 - Start from the author's own reflections and preserve first-person judgment and real cases.
 - Check title metadata limits, structural density, image count, duplicate-title risk, and sensitive configuration before publishing.
+- Create a dated evidence card for practical projects and distinguish official facts, third-party claims, first-party observations, and inference.
+- Choose between graphic post, `30-60` second video, long article, or multi-format package according to the proof and reader value.
 - Persist concrete publish failures, especially WeChat `40164 invalid ip` whitelist errors, so the draft can be retried safely.
 
 ### Length and Structure
@@ -250,6 +288,14 @@ Reusable Codex Skill for turning rough notes into polished WeChat Official Accou
 - Every section must advance the central thesis. Remove repetition, filler transitions, and irrelevant background.
 - Use clear headings and natural transitions in longer articles so the logic remains easy to scan.
 - Treat length as a hard acceptance criterion only when the user explicitly requests it.
+
+### Originality and Information Density
+
+- AI may research, challenge, structure, and polish, but it must not invent experience, customer feedback, or hands-on results.
+- A researched piece should contain one first-party contribution, two primary sources when available, one non-obvious judgment, and one immediately useful artifact.
+- Roughly every `250-300` Chinese characters should add a fact, example, mechanism, comparison, instruction, result, limitation, or decision.
+- Copy and complete `assets/originality_audit.md` before publishing. Failed work stays in research instead of being padded into an article.
+- Recheck volatile title claims such as stars, growth, price, funding, delivery, speed, and results on publication day.
 
 ## Use Cases
 
@@ -273,8 +319,16 @@ Reusable Codex Skill for turning rough notes into polished WeChat Official Accou
 wechat-article-workflow-skill/
 ├── SKILL.md
 ├── README.md
+├── CHANGELOG.md
+├── assets/
+│   ├── daily_topic_radar.csv
+│   ├── growth_log.csv
+│   └── originality_audit.md
 ├── scripts/
 │   └── publish_wechat_direct.py
+├── templates/
+│   ├── evidence_card.md
+│   └── graphic_post.md
 └── .gitignore
 ```
 
@@ -330,28 +384,35 @@ Important:
 
 ## Standard Workflow
 
-1. Collect the author's raw notes, outline, or draft.
-2. Preserve the author's judgment and remove filler and obvious AI writing traces.
-3. Generate 5-10 title candidates and choose a specific, high-curiosity title.
-4. Create `article.md` with title, author, and digest, then check thesis focus, reasoning completeness, repetition, and structural density. Enforce a length limit only when the user explicitly requests one.
-5. Generate or choose 3-5 focused cover and body images.
-6. Build WeChat-safe HTML with inline styles.
-7. Run `md2wechat inspect` to verify metadata, images, and draft readiness.
-8. Upload in-body images to WeChat.
-9. Upload the cover image as permanent material.
-10. Create a WeChat draft through the draft API.
-11. Save `draft_result.json` or `draft_error.json`.
-12. Archive article files, images, HTML, and publication metadata.
+1. Collect the author's source notes or run the multi-platform AI project radar.
+2. Scan the latest `24 hours` to `30 days` and create a timestamped `evidence_card.md` from primary sources.
+3. Use the `40`-point gate to select one recommendation and two backups. Report fewer rather than adding weak topics.
+4. Lock the reader, search keywords, thesis, and content format.
+5. For image-first work, create `graphic_post.md` first and lock the title, cover, and `5-8` cards.
+6. Create `article.md` only when deeper reasoning is justified. Enforce a length limit only when requested.
+7. Complete `originality_audit.md` and require first-party contribution, five information gains, two author-specific elements, and `PASS`.
+8. Select proof visuals first, then add cover and explanatory art.
+9. Build WeChat-safe HTML or image-post assets with platform-native endings.
+10. Run `md2wechat inspect` or inspect the image-post payload, card count, and image order.
+11. Publish only after authorization; save the exact success or failure result.
+12. Archive evidence, copy, visuals, HTML, and publication metadata.
+13. Prepare short-video, Moments, and X derivatives without auto-publishing.
+14. Record `2h/24h/7d` data and review by net followers and share rate.
 
 ## Recommended Article Folder
 
 ```text
 YYYY-MM-DD_article_slug/
+├── evidence_card.md
+├── originality_audit.md
+├── graphic_post.md
 ├── article.md
 ├── article_wechat.html
 ├── article_wechat_uploaded.html
 ├── draft_result.json
 ├── draft_error.json
+├── distribution_kit.md
+├── growth_snapshot.csv
 └── images/
     ├── cover.png
     └── body_01.png
