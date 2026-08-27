@@ -8,6 +8,11 @@
 - Why now:
 - Same-day reader outcome:
 - Original editorial angle:
+- Intended reader action: comment / share / save / follow
+- Why this action is natural:
+- Tangible object or scene:
+- Unanswered question:
+- Three-article series path:
 
 ## Primary Sources / 一手来源
 

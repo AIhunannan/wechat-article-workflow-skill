@@ -169,7 +169,34 @@ Normally reject a total below `28/40` or first-party evidence below `3/5`. A fas
 
 Before writing, build an evidence card with source URLs, scan time, star or usage count, update date, license, installation method, permissions, dependencies, cost, delivery status, limitations, and security risks. Recheck volatile claims on publication day.
 
-Lock one primary reader before writing. Reject topics that are hot but produce no useful outcome, rely only on promotional copy, or repeat the previous `30` days without a meaningful update.
+Lock one primary reader and one primary reader action before writing: `comment`, `share`, `save`, or `follow`. Do not optimize all four equally.
+
+- `Comment`: give readers a concrete question they can answer with their own situation, choice, result, or identity.
+- `Share`: say something readers naturally want to send to a colleague, customer, partner, friend, or family member. Treat sharing as a digital note that helps one person speak to another.
+- `Save`: deliver parameters, steps, commands, comparisons, templates, or a decision checklist worth returning to.
+- `Follow`: open a credible series and make the next useful question visible. A follow promise without a series path is not enough.
+
+Use the intended action to shape the title, first screen, evidence, and ending. Record it in the topic card, then compare intended and observed behavior after publication. Reject topics that are hot but produce no useful outcome, rely only on promotional copy, or repeat the previous `30` days without a meaningful update.
+
+### Reader-Action and Series Gate
+
+Treat a promising content direction as a market, not a one-off headline. Before turning it into a recurring series, require:
+
+1. `Long-term demand`: the reader problem remains after the current event fades.
+2. `Expandable subtopics`: the direction can split by reader, scene, product, price, workflow, failure, or decision.
+3. `First-hand material`: the author can add experiments, customer questions, practitioner judgment, product trade-offs, original calculations, or other defensible material.
+
+Run the `three-article test`: write three meaningfully different follow-up questions before approving a new series. If only one article is possible, treat it as a single event rather than a strategic content track. Do not label low competition as a `blue ocean` without durable demand and usable material.
+
+For every selected topic, define a `specific reader`, a `tangible object or scene`, an `unanswered question`, and an `intended action`. A strong working title often follows `specific reader + tangible object or scene + unanswered question`; use this as a specificity test, not a rigid formula.
+
+The body must deliver:
+
+1. `Source`: evidence supporting the claim.
+2. `Boundary`: what is confirmed, uncertain, applicable, and not generalizable.
+3. `Next step`: where the reader can verify, what they can try, or what decision they can make.
+
+Put sources and boundaries into the outline before drafting. If evidence is missing, narrow the claim, change the angle, or hold the topic. Apply this rule strictly to money, health, policy, investment, safety, performance, and customer-result claims.
 
 ### Title and First-Screen Conversion
 
@@ -190,6 +217,7 @@ Every practical piece should contain:
 - At least one reusable command, prompt, checklist, template, workflow, buying rule, or decision framework.
 - The author's original judgment about technical boundary, product value, or commercial meaning.
 - A source note distinguishing official facts, third-party claims, and first-party observations.
+- A clear source, boundary, and next step that repay the title's question.
 
 Treat these as reasoning requirements, not mandatory headings. The result should read like a practitioner sharing a discovery, not a generated manual.
 
@@ -249,9 +277,9 @@ Record the exact title, topic type, keyword, publication time, evidence snapshot
 ## Standard Workflow
 
 1. Clarify the article angle only if genuinely needed. Otherwise make a reasonable editorial judgment.
-2. For growth-oriented content, run the topic radar. Output one recommendation and two backups, lock one primary reader, and save a dated evidence card.
+2. For growth-oriented content, run the topic radar. Output one recommendation and two backups, lock one primary reader and one intended action, pass the three-article test for recurring series, and save a dated evidence card.
 3. Choose the distribution mode. When reach is the main goal, create `graphic_post.md` first; make long-form copy only when deeper reasoning is justified.
-4. Lock one primary search keyword, `2-4` secondary keywords, the cover promise, and the first-screen evidence.
+4. Lock one primary search keyword, `2-4` secondary keywords, the tangible object or scene, the unanswered question, the cover promise, and the first-screen evidence.
 5. Write or polish `graphic_post.md` with `templates/graphic_post.md`. Keep the same evidence and adapt only the platform-specific opening and CTA.
 6. Write or polish `article.md` when needed, with frontmatter:
    - `title`: final WeChat title, max 32 chars.
@@ -264,7 +292,7 @@ Record the exact title, topic type, keyword, publication time, evidence snapshot
 7. Generate `10` evidence-backed titles, shortlist `3`, and select `1`. If the user rejects the title, revise the cover/title before republishing.
 8. Perform the first-screen, card-density, and long-form structure edit. Confirm that every swipe or major passage adds evidence, mechanism, instruction, limitation, or judgment.
 9. Copy and complete `assets/originality_audit.md`. Require five information units, two identifiable-author elements, truthful first-party claims, source attribution, and a `PASS` decision.
-10. Confirm practical value: a `3-minute start`, truthful test status, limitations, target-user guidance, and one reusable asset.
+10. Confirm practical value: a `3-minute start`, truthful test status, limitations, target-user guidance, one reusable asset, and the `source + boundary + next step` contract.
 11. Generate or select visuals:
    - Prioritize proof images: original screenshots, command output, real product photos, data charts, comparison tables, and original diagrams.
    - Use generated visuals for the cover or explanation, not as a substitute for evidence.

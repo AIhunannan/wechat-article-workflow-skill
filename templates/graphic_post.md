@@ -7,6 +7,11 @@
 - Content type: tool / Skill / agent / hardware / workflow / news / case
 - Core judgment:
 - Same-day reader outcome:
+- Intended reader action: comment / share / save / follow
+- Why this action is natural:
+- Tangible object or scene:
+- Unanswered question:
+- Three-article series path:
 - Evidence status: verified / partly verified / unverified
 - Evidence card: `evidence_card.md`
 - Originality audit: `originality_audit.md`
@@ -87,6 +92,8 @@
 - Official facts, third-party claims, first-party observations, and inference are distinguished.
 - The originality audit has five information units, two author-specific elements, and a `PASS` result.
 - The post gives the reader a concrete action.
+- The title and first screen match the intended reader action.
+- The body delivers source, boundary, and next step.
 - The cover and cards use readable fonts with no garbled characters.
 - Platform-specific endings are not mixed together.
 - No channel is published without explicit authorization.

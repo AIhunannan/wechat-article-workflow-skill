@@ -20,6 +20,9 @@
 - 用原创度审计卡检查一手贡献、五个信息增量、两个作者独有判断和事实边界，避免“低创作度”和空洞内容。
 - 把一个选题派生为图文卡片、短视频脚本、朋友圈、X 帖子和可选长文，但不在未经授权时自动发布。
 - 记录阅读、分享、收藏和净增粉，用真实数据调整选题与标题，而不是只看总阅读量。
+- 写作前明确本篇主要希望触发评论、转发、收藏还是关注，并在发布后核对实际行为。
+- 用“长期需求、可细分、一手材料、至少可连续写三篇”筛选真正值得经营的内容方向。
+- 用“具体读者 + 具体对象/场景 + 未回答问题”检查标题，用“来源 + 边界 + 下一步”验收正文。
 - 生成微信公众号兼容的 HTML，尽量使用内联样式，减少草稿箱排版丢失。
 - 使用 `md2wechat inspect` 检查标题、作者、摘要、图片和草稿发布条件。
 - 通过微信官方接口上传正文图片、上传封面素材并创建草稿。
@@ -139,7 +142,7 @@ wechat:
 1. 收集作者原始想法，或运行多平台 AI 项目雷达。
 2. 扫描最近 24 小时至 30 天的一手来源，建立带时间戳的 `evidence_card.md`。
 3. 按 40 分制选择一个主选题和两个备选选题；不合格时宁可少报，不凑数。
-4. 锁定目标读者、搜索关键词、核心判断和内容形态。
+4. 锁定目标读者、预期动作、具体对象或场景、未回答问题、搜索关键词、核心判断和内容形态；系列选题先通过连续三篇测试。
 5. 贴图优先时先生成 `graphic_post.md`，锁定标题、封面和 5-8 张卡片。
 6. 需要深度时再生成 `article.md`；只有用户明确提出时才执行字数限制。
 7. 完成 `originality_audit.md`，确认一手贡献、五个信息增量、两个作者独有判断和 `PASS` 结果。
@@ -268,6 +271,9 @@ Reusable Codex Skill for turning rough notes into polished WeChat Official Accou
 - Use an originality audit to require first-party contribution, five information gains, two author-specific judgments, and explicit claim boundaries.
 - Derive a short-video script, Moments post, X post, and optional long article from one verified evidence set without auto-publishing.
 - Track reads, shares, saves, and net followers so topic and title decisions improve from real data.
+- Lock one primary reader action before drafting: comment, share, save, or follow, then compare it with observed behavior.
+- Approve recurring topics only when they have durable demand, expandable subtopics, first-hand material, and three credible follow-up articles.
+- Test titles with `specific reader + tangible object or scene + unanswered question`, and require the body to deliver `source + boundary + next step`.
 - Build WeChat-compatible HTML with inline styles.
 - Use `md2wechat inspect` to check title, author, digest, images, and draft readiness.
 - Upload body images, upload cover material, and create WeChat drafts through official APIs.
@@ -387,7 +393,7 @@ Important:
 1. Collect the author's source notes or run the multi-platform AI project radar.
 2. Scan the latest `24 hours` to `30 days` and create a timestamped `evidence_card.md` from primary sources.
 3. Use the `40`-point gate to select one recommendation and two backups. Report fewer rather than adding weak topics.
-4. Lock the reader, search keywords, thesis, and content format.
+4. Lock the reader, intended action, tangible object or scene, unanswered question, search keywords, thesis, and content format; recurring series must pass the three-article test.
 5. For image-first work, create `graphic_post.md` first and lock the title, cover, and `5-8` cards.
 6. Create `article.md` only when deeper reasoning is justified. Enforce a length limit only when requested.
 7. Complete `originality_audit.md` and require first-party contribution, five information gains, two author-specific elements, and `PASS`.
