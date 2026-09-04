@@ -12,6 +12,7 @@ This skill is for personal-brand WeChat articles. Default to editing the author'
 - Start from the user's notes and preserve their personal judgment.
 - Do not impose a fixed word or character limit. Let the subject, evidence, and argument determine the necessary length.
 - Prefer plain, sharp, reflective writing over polished marketing language.
+- 禁止使用无意义的、装饰性的状语、补语。写作和润色时逐句检查：删去后不改变事实、逻辑或语义边界的修饰，一律删除；保留表达时间、条件、范围、程度或结果所必需的成分，不机械禁用所有状语、补语。
 - Avoid AI-heavy patterns: formulaic openings, over-explaining, slogan endings, excessive lists, and generic inspirational tone.
 - Use a local `humanizer-zh` skill when available and apply its rules.
 

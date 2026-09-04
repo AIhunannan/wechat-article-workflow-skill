@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-09-04
+
+- Prohibited meaningless, decorative adverbials and complements during writing and polishing, while preserving modifiers needed for facts, logic, conditions, scope, degree, or results.
+
 ## 2026-08-27
 
 - Added a reader-action gate that chooses one primary outcome before drafting: comment, share, save, or follow.
