@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-12
+
+- Upgraded the active skill to the verified `workbuddy-native-v1` and `editorial-visual-direction@8d1c776` capability baseline.
+- Split the oversized entrypoint into task-routed editorial, radar, graphic, operations, publishing, and provenance references.
+- Added current-version manuscript review, stale-review invalidation, title-to-body contract, and a single adaptive visual direction before layout.
+- Added deterministic mobile-layout checks for palette application, contrast, font size, line height, and long-form rhythm.
+- Replaced the old seven-card template with a three-card default and a five-card maximum.
+- Added four content pillars, a rolling four-week calendar, welcome/menu/keyword relationship assets, reader-result metrics, production-health metrics, denominator discipline, and one-variable experiments.
+- Preserved Hu Nannan's evidence boundaries, fixed closing, AI hardware/edge AI priorities, draft-versus-publish authorization, and Obsidian archive.
+- Recorded source versions, SHA256 fingerprints, runtime path, license boundary, and rollback baseline.
+
 ## 2026-09-04
 
 - Prohibited meaningless, decorative adverbials and complements during writing and polishing, while preserving modifiers needed for facts, logic, conditions, scope, degree, or results.

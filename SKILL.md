@@ -1,382 +1,95 @@
 ---
-name: wechat-article-workflow
-description: Use when researching, creating, polishing, illustrating, formatting, publishing, growing, or archiving personal-brand WeChat content. Covers practical AI topic radar, originality review, graphic-first distribution, humanized writing, md2wechat checks, WeChat draft upload, cross-platform derivatives, growth review, and knowledge-base archive.
+name: nannan-wechat-article
+description: "Use for Hu Nannan's WeChat personal-IP strategy and execution: topic selection, article writing, evidence review, visual direction, image posts, draft delivery, publishing boundaries, growth analysis, account operations, and archive."
+metadata:
+  version: "2026.09.12"
+  weiwen_baseline: "workbuddy-native-v1 + editorial-visual-direction@8d1c776"
 ---
 
-# WeChat Article Workflow
+# 胡楠楠公众号增长与内容运营
 
-This skill is for personal-brand WeChat articles. Default to editing the author's own reflections, not generic ghostwriting.
+把公众号当作一套长期经营系统：用内容建立“AI CTO、AI 架构师、AI 产品经理、端侧 AI 与 AI 硬件实践者”的可信认知，再用真实读者行为修正选题、表达、视觉和分发。默认从胡楠楠的原始判断、客户场景、工程实践或研究问题出发，不做通用代写账号。
 
-## Voice Rules
+## 按任务读取规则
 
-- Start from the user's notes and preserve their personal judgment.
-- Do not impose a fixed word or character limit. Let the subject, evidence, and argument determine the necessary length.
-- Prefer plain, sharp, reflective writing over polished marketing language.
-- 禁止使用无意义的、装饰性的状语、补语。写作和润色时逐句检查：删去后不改变事实、逻辑或语义边界的修饰，一律删除；保留表达时间、条件、范围、程度或结果所必需的成分，不机械禁用所有状语、补语。
-- Avoid AI-heavy patterns: formulaic openings, over-explaining, slogan endings, excessive lists, and generic inspirational tone.
-- Use a local `humanizer-zh` skill when available and apply its rules.
+只读取当前任务需要的参考文件：
 
-## Practical AI Tool Daily Mode
+- 写新稿、改稿、起标题或审稿：读 [editorial-production.md](references/editorial-production.md)。
+- 公众号长文排版、配图或视觉返修：再读 [longform-editorial-standard.md](references/longform-editorial-standard.md)。
+- 每日选题、热点扫描、AI 产品或项目雷达：读 [daily-ai-radar.md](references/daily-ai-radar.md)。
+- 小绿书、小红书、公众号图片消息或多形态派生：读 [graphic-distribution.md](references/graphic-distribution.md)。
+- 制定运营策略、内容栏目、周/月复盘、增长诊断、菜单或自动回复：读 [growth-operations.md](references/growth-operations.md)。
+- 生成公众号 HTML、创建草稿、发布、记录状态或归档：读 [publishing-archive.md](references/publishing-archive.md)。公众号长文成稿时也要读取该文件，因为里面保存固定结尾。
+- 升级、迁移或审计本技能：读 [weiwen-expert-adaptation.md](references/weiwen-expert-adaptation.md)。
 
-Use this mode for growth-oriented content about AI tools, agents, Skills, websites, workflows, products, hardware, and open-source projects.
+如果任务横跨多个阶段，按实际阶段组合读取，不因为目录里存在参考文件就一次性加载全部。
 
-- Prefer projects that are new, useful, high-growth, or gaining credible momentum on X, GitHub, Kickstarter, TikTok, YouTube, or product communities.
-- Verify the original repository or product page, documentation, installation path, recent activity, limitations, permissions, cost, delivery status, and security before writing.
-- Do not behave like a news-repost account. Install, inspect, or run the core workflow when feasible, and separate verified results from project claims.
-- Keep titles simple and direct. Use numbers, stars, growth, pricing, shipment, performance, or outcomes only when the body contains dated evidence.
-- Use pain point, scenario, solution, value, real example or test, and editorial judgment as a reasoning checklist, not a rigid heading template.
-- Give readers something they can use immediately: a safe command, prompt, checklist, workflow, buying rule, comparison, or decision framework.
-- Do not promise investment returns or guaranteed income. For money-related tools, focus on research quality, business efficiency, and decision discipline.
-- Do not default to a group-join CTA. Use one configured article closing at most, and keep platform endings native.
+## 已确认的作者定位
 
-## Graphic-First Distribution Mode
+- 作者：胡楠楠，aiwei.ai 联合创始人、CTO&FDE，前华为、腾讯金牌架构师。
+- 核心内容资产：AI 工具与 Agent、端侧 AI、AI 硬件、aiweiOS、客户交付、产品化判断、创业中的真实决策。
+- 目标不是追求泛流量，而是让创业者、产品与技术负责人、AI 硬件品牌和潜在客户形成清晰认知：胡楠楠能把 AI 从概念推进到产品和交付。
+- 写作应让普通读者先看懂人、设备、场景、问题和结果，再理解必要的技术机制。技术参数服务于判断，不能替代产品故事。
+- 用户原话、已确认观点和真实素材优先于任何模板。未经证据支持，不添加华为、腾讯、客户或 aiwei.ai 的经历、结果和评价。
 
-When the goal is reach, saves, shares, or follower growth, treat the image post as the primary artifact instead of adding decorative images after a long article.
+## 一套内容闭环
 
-- Default content mix: roughly `70%` image-first posts, `20%` short-video derivatives, and `10%` deep articles. Adjust from real platform data.
-- A graphic post normally contains `5-8` cards. Each card has one idea, short copy, and a visual task that directly supports the claim.
-- Recommended card sequence: concrete hook, reader pain, tool/project or scene, how it works, evidence or limitation, operator judgment, and same-day action.
-- Put a real screenshot, hardware photo, command/output, pricing detail, workflow result, or customer scenario on at least one evidence-bearing card. Never fill a carousel with generic AI imagery.
-- Generate at least three title and cover directions, then choose the one whose promise is fully repaid by the cards.
-- For WeChat image posts, use `md2wechat create_image_post` or `newspic` when available. For Xiaohongshu, use a `3:4` or `4:5` layout and publish through an authorized connector only.
-- A long article is the depth layer. Do not expand a thin tool announcement into a long article merely to increase word count.
+每个内容任务都先明确四件事：
 
-### Graphic Post Template
+1. `Reader`：本篇只服务一个主要读者。
+2. `Question`：读者此刻真正想解决的一个问题。
+3. `Judgment`：胡楠楠能提供、普通转载无法提供的一句判断。
+4. `Action`：希望读者完成的一个主要动作，四选一：评论、转发、收藏、关注。
 
-Use `templates/graphic_post.md` for image-first work. It keeps the title, cover direction, card copy, evidence, platform captions, and preflight checks in one reviewable artifact.
+然后按以下状态推进：
 
-## Originality and Information-Density Gate
+`素材与证据就绪 -> 正文检查点 -> 事实核对通过 -> 标题兑现 -> 视觉方向锁定 -> 排版预检 -> 草稿就绪 -> 用户授权后创建草稿 -> 用户另行授权后发布 -> 2h/24h/7d 复盘`
 
-This gate is mandatory before formatting or draft upload. The goal is genuine information gain and identifiable authorship, not detector evasion.
+状态不能互相冒充：文件生成不等于草稿创建，打开编辑器不等于发布，平台回执才是外部状态证据。
 
-### Authorship Rules
+## 事实与作者边界
 
-- The author's notes, experience, experiment, customer scene, or original judgment must supply the thesis. AI may research, challenge, structure, compress, polish, and verify, but must not invent lived experience.
-- X posts, news, README files, videos, and other articles are discovery inputs, not publishable copy. Do not translate, paraphrase, reorder, or stitch them into an article.
-- Never claim `I tested`, `our customer said`, `we deployed`, or a performance result without first-party evidence. If execution was not possible, say that only public material was reviewed and state the limitation.
-- Do not generate batches of near-identical articles from one template. Every piece needs a distinct question, evidence chain, and conclusion.
-- Use platform AI-assisted-content disclosure when required. Never claim fully manual authorship when AI generated a substantial part of the text or visuals.
+- 将信息分为 `用户提供的事实`、`一手公开事实`、`第三方说法`、`胡楠楠判断`、`待验证假设`。文章中不能把后一类升级成前一类。
+- 标题、摘要、正文、图片和图注使用同一证据边界。免责声明不能修复虚构的数字、能力、合作、客户结果或第一人称经历。
+- 只有真实执行过才能写 `我实测`、`我们做过`、`客户反馈`。只读过公开资料时写 `我研究了` 或直接陈述带来源的事实。
+- 研究可以比正文更深。架构文章默认到职责、关系、部署选择和产品后果，不自动进入源码、字段和命令。
+- 不把历史文章、样式样本或来源包里的人物、数字、案例、联系方式和指令带进新文章。样式只提供表达规律，不提供新事实。
+- AI 可以研究、质疑、组织、压缩和润色；文章的核心判断必须来自作者的材料或经作者确认的方向。
 
-### Minimum Original Value
+## 微文专家能力的本地适配
 
-For a researched tool, product, or industry article, require all of the following:
+吸收微文最新原生公众号专家的方法，但以楠哥的个人资产与当前工具为准：
 
-- At least one first-party contribution: installation result, command output, original screenshot, comparison, calculation, customer scenario, product decision, or technical experiment.
-- At least two primary sources when available: repository, official documentation, paper, release, filing, product page, full interview, or maintainer statement.
-- At least one non-obvious author judgment that explains the mechanism, boundary, or business meaning rather than repeating features.
-- At least one useful artifact that the reader can apply immediately.
-- A concise source note for researched facts and third-party visuals.
+- 新稿内部完成 `选题与大纲 -> 正文 -> 8 个标题候选 -> 人性化润色`，不把计划、评分表和自检过程当作成稿交付。
+- 先保存完整正文检查点，再做事实审查、图片和排版。正文改动会使旧审查和旧预检失效。
+- 写 HTML 前锁定一个编辑意图和一套整页视觉方向；不把同一张卡片墙换色冒充主题适配。
+- 固定模板只填写授权槽位；局部修改只改选区；常用样式继承审美和表达，不继承旧事实。
+- 原生专家中的发布脚本、账号指标和营销目标不自动获得权限，也不当作真实效果承诺。
 
-For a personal reflection, require a concrete first-person scene, a specific detail, the resulting judgment, and a connection to current work. Generic motivational expansion does not count.
+## 默认交付判断
 
-### Information-Density Test
+- 用户只要选题：输出一个 `今日首选` 和最多两个合格备选，给出证据与边界，然后停下等待选择；不自动写稿或生图。
+- 用户要完整文章：交付标题、摘要、正文、证据记录、必要图片与可审阅排版；不要用策划说明代替文章。
+- 用户要增长诊断：先读取真实基线和样本量；缺失数据写 `未知`，不能按零或行业平均数填充。
+- 用户要创建草稿：需明确授权草稿动作；用户要正式发布：需再次明确授权，并取得平台成功页、内容 ID 或链接。
+- 用户只说“同步到 Git”：只同步已验证的技能或代码，不上传文章素材、公众号密钥、客户资料、托管记忆或未声明的本机配置。
 
-- Every roughly `250-300` Chinese characters should deliver a new fact, example, mechanism, comparison, instruction, result, limitation, or decision.
-- Use the proof chain `fact -> interpretation -> reader consequence`.
-- Before approval, list at least five distinct information units learned by the reader. Reworded versions of one conclusion count once.
-- Remove generic openings, broad AI background, empty transitions, ceremonial conclusions, repeated slogans, and copied feature lists.
+## 质量门禁
 
-### Identifiable-Author Test
+交付前确认：
 
-Ask: `If the author's name were removed, what could not be written by a generic AI account?`
+- 主题、读者、判断和主要动作一致；标题在首屏得到兑现。
+- 每个主要段落带来事实、场景、机制、比较、方法、结果、边界或决策中的至少一项。
+- 至少有两处可辨认的胡楠楠贡献；不能替换成任意 AI 账号仍成立。
+- 强事实有来源，时间敏感数字带日期；没有编造经历、效果、频率、金额或社会共识。
+- 图片各有明确任务；真实产品图、截图和生成概念图不混淆。
+- 长文排版落实统一视觉方向，手机阅读清楚，无重复标题、横向溢出、低对比文字或机械卡片墙。
+- 公众号固定结尾恰好出现一次且位于正文最后；平台状态与授权边界写清楚。
 
-Require at least two defensible answers, such as a real experiment, customer observation, engineering judgment, founder decision, original framework, or candid limitation. If there are fewer than two, collect more material or change the topic.
+## 本地资源
 
-Copy `assets/originality_audit.md` into the content folder, complete it, and mark the work `PASS` before formatting. A failed piece stays in research and must not be padded into publishable length.
-
-## AI Project Topic Radar
-
-Use a multi-source radar before selecting practical AI topics. The purpose is not to collect hot links, but to choose a project that gives the reader a concrete result.
-
-1. Use a recent-trend researcher such as `last30days` for a rolling `30-day` scan across X, GitHub, YouTube, Hacker News, Reddit, and the open web. For named projects, run its planning or preflight flow first and preserve the scan date.
-2. Use an AI product radar such as `ai-product-radar-skill` to shortlist products from Kickstarter, TikTok, GitHub, YouTube, X, Amazon, and public product pages. Its default daily window is `24 hours`; expand to `7-30 days` if the signal is thin.
-3. Use a multi-backend research tool such as `agent-reach` to fill gaps. Run its doctor/preflight command before multi-backend research, route each question to the proper web, social, GitHub, or video connector, and combine X momentum with repository or first-party evidence and local-language context.
-
-### Source Roles
-
-- `X`: launch momentum, demos, founder claims, user pain, and early reaction. Use it for discovery and sentiment, not proof by itself.
-- `GitHub`: stars and velocity, releases, commits, issues, license, install friction, and whether the project is active.
-- Chinese-language public sources: local scenarios, pricing, distribution, user questions, and whether a project fits Chinese users and companies.
-- Kickstarter, TikTok, Amazon, and YouTube: purchase intent, viral product behavior, physical product quality, demonstrations, delivery signals, and the gap between marketing and experience. A viral clip is discovery evidence, not proof of sales or delivery.
-- First-party documentation, repositories, release notes, product pages, and maintainer posts outrank commentary. Distinguish fact, inference, and editorial judgment.
-
-### Priority Topics
-
-Prefer concrete projects in these areas:
-
-1. Practical Skills, agents, and high-growth open-source projects that can produce a same-day outcome and have a reproducible path.
-2. AI hardware and edge AI: validated Kickstarter or TikTok products, local inference, chips, voice devices, wearables, cameras, developer boards, robots, and AI toys.
-3. AI income, productivity, and business workflows: research, lead generation, content, sales, automation, service delivery, and decision support. Teach a reproducible workflow; never promise guaranteed income.
-4. AI companions and emotional value: voice agents, memory, emotional computing, companion devices, and elder, child, or pet scenarios.
-5. Real customer cases and original judgment: deployment lessons, product trade-offs, cost decisions, failures, and practical conclusions.
-
-Useful discovery keywords include `AI hardware`, `edge AI`, `AI companion`, `voice agent`, `robotics`, `AI toy`, `emotional AI`, `Skill`, `agent`, `AI automation`, `AI productivity`, and `AI income`, combined with `GitHub`, `X`, `Kickstarter`, `TikTok`, `deployment`, `benchmark`, `shipping`, or a concrete user scenario.
-
-### Radar Score and Evidence Gate
-
-Score each candidate from `0-5` on reader pain, immediate usefulness, evidence and reproducibility, freshness, audience fit, save/share potential, differentiated judgment, and first-party evidence. Add a separate concrete-value check:
-
-- Can a reader reproduce, buy, deploy, or use it within a day?
-- Is there a public evidence card with URL, platform, scan time, metric and date, update date, license, installation path, cost or permissions, and limitations?
-- Is there a demo, screenshot, hardware photo, workflow output, or customer scenario?
-- What can the author add that a README or news rewrite cannot?
-
-Normally publish only when the total is at least `28/40`, first-party evidence is at least `3/5`, and concrete value is at least `3/5`. Reject high heat without a usable outcome, high stars without recent activity, and any number that cannot be verified. Each daily scan should output exactly one recommended topic and two backups; if fewer than three qualify, report fewer rather than filling the list with weak topics.
-
-### Choose the Content Shape
-
-- `Graphic post`: default for one tool, Skill, project, hardware product, or sharp method that can be understood and saved quickly.
-- `Short video`: use when a demo, before/after, screen recording, voice interaction, or physical behavior is the proof. Keep one promise and one scene within `30-60` seconds.
-- `Long article`: use for multi-source synthesis, customer cases, architecture trade-offs, or original worldview. Do not stretch a weak topic into a long article.
-- `Multi-format`: when evidence and reader value are both high, publish the graphic first and derive the video and article within `72` hours while preserving the same facts and caveats.
-
-The daily decision must answer: why this topic now, what the reader can do today, and what original judgment the author adds.
-
-## Configurable Audience-Growth System
-
-Set a measurable follower goal and deadline in the project configuration. Calculate the operating target as `(goal - current followers) / remaining months`, then replace assumptions with actual channel data. A target is an operating guide, never a guarantee.
-
-### North Star
-
-- Optimize first for `net new followers per post`, then shares per 100 readers, completion, saves or `在看`, search traffic, and total reads.
-- Do not mistake high reads for success when a post attracts no relevant followers.
-- Build trust by repeatedly helping readers solve real problems. Never use forced follows, incentivized sharing, fake scarcity, or unsupported income claims.
-
-### Default Content Portfolio
-
-Use this starting mix and adjust from measured conversion:
-
-- `50%` high-growth AI projects with hands-on verification.
-- `25%` reusable workflows, Skills, prompts, and practical tutorials.
-- `15%` edge AI, AI hardware, AI companions, and productization practice.
-- `10%` real customer cases and original practitioner judgment.
-
-Daily utility brings traffic; original judgment and real cases build a durable personal brand. Publish at least two deeper original or customer-case pieces each month, and ensure every tool article includes a clear practitioner judgment.
-
-### Daily Topic Gate
-
-Score three or more candidates from `0-5` on:
-
-1. Reader pain intensity.
-2. Immediate usefulness.
-3. Evidence and reproducibility.
-4. Freshness and discussion momentum.
-5. Fit with the author's expertise and audience.
-6. Share and save potential.
-7. Differentiated personal judgment.
-8. Available first-party evidence.
-
-Normally reject a total below `28/40` or first-party evidence below `3/5`. A fast-growing small project may outrank an old high-star project when velocity, activity, utility, and audience fit are stronger.
-
-Before writing, build an evidence card with source URLs, scan time, star or usage count, update date, license, installation method, permissions, dependencies, cost, delivery status, limitations, and security risks. Recheck volatile claims on publication day.
-
-Lock one primary reader and one primary reader action before writing: `comment`, `share`, `save`, or `follow`. Do not optimize all four equally.
-
-- `Comment`: give readers a concrete question they can answer with their own situation, choice, result, or identity.
-- `Share`: say something readers naturally want to send to a colleague, customer, partner, friend, or family member. Treat sharing as a digital note that helps one person speak to another.
-- `Save`: deliver parameters, steps, commands, comparisons, templates, or a decision checklist worth returning to.
-- `Follow`: open a credible series and make the next useful question visible. A follow promise without a series path is not enough.
-
-Use the intended action to shape the title, first screen, evidence, and ending. Record it in the topic card, then compare intended and observed behavior after publication. Reject topics that are hot but produce no useful outcome, rely only on promotional copy, or repeat the previous `30` days without a meaningful update.
-
-### Reader-Action and Series Gate
-
-Treat a promising content direction as a market, not a one-off headline. Before turning it into a recurring series, require:
-
-1. `Long-term demand`: the reader problem remains after the current event fades.
-2. `Expandable subtopics`: the direction can split by reader, scene, product, price, workflow, failure, or decision.
-3. `First-hand material`: the author can add experiments, customer questions, practitioner judgment, product trade-offs, original calculations, or other defensible material.
-
-Run the `three-article test`: write three meaningfully different follow-up questions before approving a new series. If only one article is possible, treat it as a single event rather than a strategic content track. Do not label low competition as a `blue ocean` without durable demand and usable material.
-
-For every selected topic, define a `specific reader`, a `tangible object or scene`, an `unanswered question`, and an `intended action`. A strong working title often follows `specific reader + tangible object or scene + unanswered question`; use this as a specificity test, not a rigid formula.
-
-The body must deliver:
-
-1. `Source`: evidence supporting the claim.
-2. `Boundary`: what is confirmed, uncertain, applicable, and not generalizable.
-3. `Next step`: where the reader can verify, what they can try, or what decision they can make.
-
-Put sources and boundaries into the outline before drafting. If evidence is missing, narrow the claim, change the angle, or hold the topic. Apply this rule strictly to money, health, policy, investment, safety, performance, and customer-result claims.
-
-### Title and First-Screen Conversion
-
-- Generate `10` titles, shortlist `3`, and select `1` only after checking every number, name, speed, and result against evidence.
-- Prefer simple titles that expose the project, proof, contrast, and reader outcome. Do not use `guaranteed profit`, `effortless income`, `crushes`, `revolutionary`, or similar claims without exceptional evidence.
-- The first card or first `180` Chinese characters must answer: what is it, why now, what can the reader do today, and what is the author's conclusion?
-- Put the strongest screenshot, real photo, output, parameter, or explanatory visual near the first screen. Do not begin with long history or generic AI trends.
-
-### Practical Value Standard
-
-Every practical piece should contain:
-
-- One real pain point and one concrete user scenario.
-- A verified solution path, not a feature list.
-- A `3-minute start` block with the shortest safe usage path.
-- A truthful test block with environment, observed result, failures, and limitations; omit it if no test was run.
-- Who should use it and who should not.
-- At least one reusable command, prompt, checklist, template, workflow, buying rule, or decision framework.
-- The author's original judgment about technical boundary, product value, or commercial meaning.
-- A source note distinguishing official facts, third-party claims, and first-party observations.
-- A clear source, boundary, and next step that repay the title's question.
-
-Treat these as reasoning requirements, not mandatory headings. The result should read like a practitioner sharing a discovery, not a generated manual.
-
-### Search, Series, and Follow Conversion
-
-- Select one primary WeChat search keyword and `2-4` secondary keywords. Use them naturally; never stuff keywords.
-- Save `primary_keyword`, `secondary_keywords`, `source_urls`, `topic_type`, `project_metric_at_scan`, and `scan_time` in metadata.
-- Link related pieces into a repeatable series so one successful post leads to the next useful post.
-- Use at most one configured closing. Xiaohongshu captions must not copy WeChat-only language such as `在看` or `星标`.
-
-### One Topic, Four Assets
-
-After the graphic post is ready, prepare but do not automatically publish:
-
-- A `60-second` short-video script derived from the strongest card.
-- An `80-120` Chinese-character Moments post.
-- One concise X post.
-- Three alternative title and cover directions for later A/B learning.
-- A long-form WeChat article only when the topic needs deeper reasoning or durable reference value.
-
-Reuse the same verified evidence while adapting the hook and CTA to each platform. Do not auto-publish without explicit authorization.
-
-### Growth Measurement Loop
-
-Record the exact title, topic type, keyword, publication time, evidence snapshot, traffic sources, readers at `2h/24h/7d`, shares, saves or `在看`, new followers, unfollows, and net followers.
-
-- Use `assets/growth_log.csv` as the field template and `assets/daily_topic_radar.csv` for scoring.
-- Review weekly by net followers per post and shares per 100 readers, not only total reads.
-- Extract one reusable pattern from the top `20%`: topic, title, first screen, evidence, image, or distribution source.
-- Publish a useful adjacent follow-up within `72` hours when demand is clear; solve the next question instead of rewriting the same post.
-- Diagnose the bottom `20%`: weak topic, weak title, title-body mismatch, insufficient proof, poor first screen, or wrong audience.
-- After four weeks, establish channel-specific baselines from actual data. Do not invent thresholds before evidence exists.
-
-## Length and Structure Rules
-
-- Optimize for a clear theme and complete reasoning, not a target word count.
-- State the central judgment early. Every section should add evidence, a case, an explanation, a counterpoint, or a useful conclusion.
-- Remove repeated claims, empty transitions, generic background, and paragraphs that do not move the argument forward.
-- Use a short article when the idea is simple. Allow a longer article when research, customer cases, technical explanation, or personal experience genuinely needs space.
-- For longer articles, use clear section headings and natural transitions so readers can understand the argument even when scanning quickly.
-- Prefer the shortest version that fully explains the idea, but never cut necessary reasoning merely to stay under an arbitrary limit.
-
-## Title Rules
-
-- Treat the title as a growth lever, not a label. A good title can matter more than a good paragraph.
-- Before finalizing, generate 5-10 candidate titles and choose the one with the strongest curiosity gap, specificity, and forwarding impulse.
-- Prefer titles with concrete hooks: numbers, extreme contrast, hidden origin stories, surprising causal claims, famous names, or high-stakes consequences.
-- Use the author's historically strong titles as benchmarks, but copy the underlying mechanism rather than repeating their wording.
-- Good title directions:
-  - `X诞生前，先发生了一个没人重视的小故事`
-  - `真正改变X的，不是Y，而是Z`
-  - `为什么我越来越相信：X比融资更重要`
-  - `一个被忽视的小实验，后来长成了X`
-- Keep the final WeChat title within 32 Chinese characters when possible, but do not make it bland just to be short.
-- Avoid flat summary titles such as `关于XX的思考`, `XX给我的启发`, `读XX有感`, unless the user explicitly wants a low-key diary tone.
-
-## Standard Workflow
-
-1. Clarify the article angle only if genuinely needed. Otherwise make a reasonable editorial judgment.
-2. For growth-oriented content, run the topic radar. Output one recommendation and two backups, lock one primary reader and one intended action, pass the three-article test for recurring series, and save a dated evidence card.
-3. Choose the distribution mode. When reach is the main goal, create `graphic_post.md` first; make long-form copy only when deeper reasoning is justified.
-4. Lock one primary search keyword, `2-4` secondary keywords, the tangible object or scene, the unanswered question, the cover promise, and the first-screen evidence.
-5. Write or polish `graphic_post.md` with `templates/graphic_post.md`. Keep the same evidence and adapt only the platform-specific opening and CTA.
-6. Write or polish `article.md` when needed, with frontmatter:
-   - `title`: final WeChat title, max 32 chars.
-   - `author`: configured author name.
-   - `digest`: max 128 chars.
-   - `primary_keyword`: main WeChat search phrase when applicable.
-   - `secondary_keywords`: `2-4` related phrases when applicable.
-   - `source_urls`: primary evidence sources.
-   - `scan_time`: verification time for volatile claims.
-7. Generate `10` evidence-backed titles, shortlist `3`, and select `1`. If the user rejects the title, revise the cover/title before republishing.
-8. Perform the first-screen, card-density, and long-form structure edit. Confirm that every swipe or major passage adds evidence, mechanism, instruction, limitation, or judgment.
-9. Copy and complete `assets/originality_audit.md`. Require five information units, two identifiable-author elements, truthful first-party claims, source attribution, and a `PASS` decision.
-10. Confirm practical value: a `3-minute start`, truthful test status, limitations, target-user guidance, one reusable asset, and the `source + boundary + next step` contract.
-11. Generate or select visuals:
-   - Prioritize proof images: original screenshots, command output, real product photos, data charts, comparison tables, and original diagrams.
-   - Use generated visuals for the cover or explanation, not as a substitute for evidence.
-   - Generated images are usually under `$CODEX_HOME/generated_images/...`; copy selected files into `images\` and leave originals in place.
-   - A long article normally uses one strong `16:9` cover plus `2-4` precise body images. A graphic post normally uses `5-8` matching `3:4` or `4:5` cards.
-   - Each image must have a job: prove authenticity, explain a concept, create emotional atmosphere, show a product/object, or summarize a key model. Do not add generic decoration.
-   - When the user provides real photos, prefer them for authenticity and place them early if they strengthen trust.
-   - For AI-generated images, make prompts specific to the paragraph: people, objects, scene, metaphor, mood, color palette, and explicit `no text, no logos` constraints.
-   - Avoid cheap futuristic imagery, random robots, generic business icons, and images that only loosely match the paragraph.
-   - If the user expects every generated image to appear in the article body, embed the cover as the first body image too; WeChat cover material alone does not display inside article content.
-12. Append the configured article closing exactly once when one exists. Do not add a second profile or CTA after it.
-13. Build WeChat-safe HTML or image-post assets:
-   - Use inline styles only.
-   - Avoid relying on `<style>` tags for final WeChat body.
-   - Keep the official WeChat title out of the body H1 to avoid duplicate title risk.
-14. Run `md2wechat inspect` for long articles, or inspect the image-post payload and card count for graphic posts:
-   - Confirm title, author, digest, image order, upload readiness, and draft readiness.
-   - If md2wechat API theme conversion fails, use the local inline HTML path and direct WeChat draft script.
-15. Publish only after authorization:
-   - Use `md2wechat create_image_post` or `newspic` for a WeChat image post when available. Do not force it through the long-article conversion path.
-   - Prefer a direct draft script that explicitly sets title, author, digest, content, and cover media id.
-   - Never use a flow that may create a default title such as "AI测试文章".
-   - If WeChat returns `40164 invalid ip ... not in whitelist`, report the exact IP shown by WeChat. This IP can differ from generic public-IP lookup services, so trust the WeChat error.
-   - Publish Xiaohongshu or other channels only through an authorized connector and only after explicit approval.
-16. Archive to the configured knowledge base:
-   - Base path: the configured local knowledge-base root.
-   - Article path: `50_输出成果\IP文章成品\YYYY\YYYY-MM\YYYY-MM-DD_文章标题\` when using the default Obsidian layout.
-   - Save the source notes, evidence card, `graphic_post.md`, `article.md`, HTML, publication metadata, originality audit, and visuals.
-   - Update `50_输出成果\IP文章成品\IP文章时间轴.md`.
-17. Prepare the four-channel derivative assets and save them beside the topic. Do not publish them without permission.
-18. After publication data is available, append the growth log and run the weekly or monthly review.
-
-## Directory Convention
-
-Desktop working directory:
-
-```text
-<workspace>\YYYY-MM-DD_slug\
-```
-
-Recommended files:
-
-```text
-article.md
-graphic_post.md
-article_wechat.html
-publish_wechat_direct.py
-draft_result.json
-draft_error.json
-evidence_card.md
-originality_audit.md
-distribution_kit.md
-growth_snapshot.csv
-images\cover.png
-images\body_01.png
-images\body_02.png
-images\body_03.png
-```
-
-## Publishing Helper
-
-Use `scripts\publish_wechat_direct.py` from this skill when md2wechat conversion or `test-draft` is unreliable.
-
-Example:
-
-```powershell
-python scripts\publish_wechat_direct.py `
-  --root C:\path\to\article_folder `
-  --html article_wechat.html `
-  --cover images\cover.png `
-  --inline images\kpt_formula.png `
-  --title "别迷信天赋，成功靠知识和实践" `
-  --author "Author Name" `
-  --digest "MIT教授Patrick Winston的一个公式，让我重新理解创业：别迷信天赋，先积累知识，再走进真实世界练习。"
-```
-
-The helper reads WeChat `appid` and `secret` from `~\.config\md2wechat\config.yaml`, uploads body images with `uploadimg`, uploads cover as permanent material, creates a draft via `/cgi-bin/draft/add`, and writes `draft_result.json` or `draft_error.json`.
-
-## Final Response Checklist
-
-- State whether the WeChat draft was created.
-- If successful, include draft `media_id`.
-- Include the final title.
-- Mention the number of in-body images if the article was prepared for publishing.
-- Link to local article and Obsidian archive paths.
-- Mention any real blocker, especially IP whitelist errors.
+- 选题评分字段：`assets/daily_topic_radar.csv`
+- 运营记录字段：`assets/growth_log.csv`
+- 原创度审计：`assets/originality_audit.md`
+- 三卡图文模板：`templates/graphic_post.md`
+- 公众号草稿辅助脚本：`scripts/publish_wechat_direct.py`

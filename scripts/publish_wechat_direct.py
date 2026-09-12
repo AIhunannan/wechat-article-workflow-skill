@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -119,7 +120,7 @@ def main() -> None:
     parser.add_argument("--cover", required=True)
     parser.add_argument("--inline", action="append", default=[])
     parser.add_argument("--title", required=True)
-    parser.add_argument("--author", required=True)
+    parser.add_argument("--author", default="胡楠楠")
     parser.add_argument("--digest", required=True)
     parser.add_argument("--config", type=Path, default=Path.home() / ".config" / "md2wechat" / "config.yaml")
     args = parser.parse_args()
@@ -168,8 +169,6 @@ if __name__ == "__main__":
         error = {"success": False, "error": str(exc)}
         try:
             root_arg = None
-            import sys
-
             for i, value in enumerate(sys.argv):
                 if value == "--root" and i + 1 < len(sys.argv):
                     root_arg = Path(sys.argv[i + 1])

@@ -1,99 +1,114 @@
-# Graphic Post Brief
+# 图文贴图发布稿
 
-## Topic
+## 选题
 
-- Topic:
-- Primary reader:
-- Content type: tool / Skill / agent / hardware / workflow / news / case
-- Core judgment:
-- Same-day reader outcome:
-- Intended reader action: comment / share / save / follow
-- Why this action is natural:
-- Tangible object or scene:
-- Unanswered question:
-- Three-article series path:
-- Evidence status: verified / partly verified / unverified
-- Evidence card: `evidence_card.md`
-- Originality audit: `originality_audit.md`
+- 主题：
+- 目标读者：
+- 购买者与使用者：
+- 具体使用场景：
+- 核心痛点：
+- 现有替代方案：
+- AI产品方案：
+- 端侧AI为什么必要：
+- 用户最终获得的价值：
+- 商业验证信号：
+- 内容类型：工具 / Skill / Agent / 端侧AI / AI硬件 / 客户案例 / 个人判断
+- 核心判断：
+- 读者看完能获得什么：
+- 预期读者动作：评论 / 转发 / 收藏 / 关注
+- 为什么这个动作自然发生：
+- 具体对象或场景：
+- 尚未回答的问题：
+- 可连续展开的三篇文章：
 
-## Titles
+## 标题
 
-- Final title:
-- Backup title 1:
-- Backup title 2:
-- Title evidence check:
+- 最终标题：
+- 备用标题1：
+- 备用标题2：
+- 备用标题3：
 
-## Cover
+## 封面
 
-- Cover promise:
-- Visual direction:
-- Ratio: 3:4 / 4:5 / 16:9
-- Required elements:
-- Forbidden elements:
+- 主标题：
+- 副标题：
+- 视觉方向：
+- 比例：3:4 / 4:5 / 16:9
+- 必须出现：具体项目、数字、参数或结果
+- 禁止出现：乱码、无依据的收益承诺、虚假Logo、泛化科技装饰
 
-## Cards
+## 整组视觉方向
 
-### Card 01 - Hook
+- 编辑意图：
+- 画布色 / 主文字色 / 强调色：
+- 图片媒介：实物图 / 截图 / 摄影 / 插画 / 机制图
+- 系列一致性：主体、材质、色调、光线
+- 证据图与概念图如何区分：
 
-- Copy:
-- Visual task:
-- Evidence or source:
+## 卡片文案
 
-### Card 02 - Pain
+### Card 01：钩子与价值
 
-- Copy:
-- Visual task:
-- Evidence or source:
+- 文案：
+- 视觉任务：
+- 证据来源：
 
-### Card 03 - Project or Scene
+### Card 02：机制与证据
 
-- Copy:
-- Visual task:
-- Evidence or source:
+- 文案：
+- 视觉任务：
+- 证据来源：
 
-### Card 04 - How It Works
+### Card 03：判断、边界与行动
 
-- Copy:
-- Visual task:
-- Evidence or source:
+- 文案：
+- 视觉任务：
+- 证据来源：
 
-### Card 05 - Proof and Limits
+## 可选扩展（只有信息独立时使用，整组最多 5 张）
 
-- Copy:
-- Visual task:
-- Evidence or source:
+### Card 04：
 
-### Card 06 - Editorial Judgment
+- 文案：
+- 视觉任务：
+- 证据来源：
 
-- Copy:
-- Visual task:
-- Evidence or source:
+### Card 05：
 
-### Card 07 - Same-Day Action
+- 文案：
+- 视觉任务：
+- 证据来源：
 
-- Copy:
-- Visual task:
-- Evidence or source:
+## 小红书配文
 
-## Platform Captions
+正文：
 
-### WeChat Image Post
+话题：
 
-### Xiaohongshu
+作者信息：
 
-### Short Video Voiceover
+## 微信图文配文
 
-## Preflight
+正文：
 
-- The hook is understandable in three seconds.
-- Each card contains one idea.
-- At least one card contains verifiable evidence.
-- Numbers and project claims are supported and dated.
-- Official facts, third-party claims, first-party observations, and inference are distinguished.
-- The originality audit has five information units, two author-specific elements, and a `PASS` result.
-- The post gives the reader a concrete action.
-- The title and first screen match the intended reader action.
-- The body delivers source, boundary, and next step.
-- The cover and cards use readable fonts with no garbled characters.
-- Platform-specific endings are not mixed together.
-- No channel is published without explicit authorization.
+## 长文扩展
+
+- 需要展开的背景：
+- 需要补充的案例：
+- 需要核验的事实：
+- 长文核心结论：
+
+## 发布前检查
+
+- [ ] 第一张图在3秒内能看懂主题
+- [ ] 第一张图先讲目标用户、痛点和结果，而不是先堆AI术语或芯片参数
+- [ ] 每张图只有一个核心信息
+- [ ] 默认 3 张；扩展到 4-5 张时，每张都有不可合并的新信息
+- [ ] 至少一张图包含真实证据或可核验来源
+- [ ] 标题中的数字、项目名、结果都有正文依据
+- [ ] 标题和第一屏共同服务于一个预期读者动作
+- [ ] 正文交付了来源、边界和下一步
+- [ ] 产品内容讲清了用户、场景、痛点、替代方案、AI方案、端侧价值和商业证据
+- [ ] 小红书配文没有微信专属话术
+- [ ] 公众号长文若存在，固定结尾只出现一次
+- [ ] 图片已检查中文字体，没有“？？？”乱码
