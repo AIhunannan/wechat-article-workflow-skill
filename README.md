@@ -83,7 +83,7 @@ python -m py_compile scripts\publish_wechat_direct.py
 
 ## 来源与许可说明
 
-本版本参考用户本机微文代码基线 `aiwei-ai/wechat-writer@8d1c776` 和 WorkBuddy `wechat-official-account-expert/1.0.2` 的工作方法。来源中未发现可用于公开再分发的独立 LICENSE 文件，因此本仓库只提交重新整理的工作流、个人配置和本地门禁，不包含供应商脚本或原生专家整包源码，也不宣称获得第三方品牌或代码授权。具体指纹见 `references/weiwen-expert-adaptation.md`。
+本版本参考用户本机微文代码基线 `aiwei-ai/wechat-writer@8d1c776` 和 WorkBuddy `wechat-official-account-expert/1.0.2` 的工作方法。原生包内有少数组件级 LICENSE，但未发现覆盖完整专家包、允许整包公开再分发的统一许可。因此本仓库只提交重新整理的工作流、个人配置和本地门禁，不包含供应商脚本或原生专家整包源码，也不宣称获得第三方品牌或代码授权。具体指纹见 `references/weiwen-expert-adaptation.md`。
 
 ## 安全
 
