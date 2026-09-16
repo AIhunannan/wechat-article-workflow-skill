@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-16
+
+- Consolidated the WorkBuddy outline, style-DNA, eight-title, draft-review, and humanization methods into the single active `nannan-wechat-article` entrypoint.
+- Separated WeChat long-form writing from the three-card graphic-post workflow; card copy is no longer a mandatory long-form precursor.
+- Added five adaptive editorial modes: product story, architecture explainer, hands-on tutorial, case narrative, and reflective judgment.
+- Added content-driven layout guidance, limited repeated boxes and heading ornaments, and required complete 390px plus desktop visual review.
+- Reweighted title selection toward truthfulness, first-screen repayment, author fit, and usefulness instead of maximum emotional intensity.
+- Preserved account isolation, evidence boundaries, draft-versus-publish authorization, and rollback provenance.
+
 ## 2026-09-12
 
 - Upgraded the active skill to the verified `workbuddy-native-v1` and `editorial-visual-direction@8d1c776` capability baseline.

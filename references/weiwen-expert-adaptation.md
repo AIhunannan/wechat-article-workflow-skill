@@ -2,11 +2,12 @@
 
 ## 当前基线
 
-- 适配日期：2026-09-12。
+- 适配日期：2026-09-16。
 - 微文代码基线：`aiwei-ai/wechat-writer` commit `8d1c776`（`feat: add editorial visual direction gate`）。
 - 原生专家入口：本机 WorkBuddy `wechat-official-account-expert/1.0.2`，微文运行标识 `workbuddy-native-v1`。
 - 活动技能入口：`C:\Users\cughn\.codex\skills\nannan-wechat-article\SKILL.md`。
-- 用户链接的回滚基线：`_backups\nannan-wechat-article-before-title-20260906-193156\SKILL.md`；归档保持不变。
+- 本轮 WorkBuddy 方法来源：`C:\Users\cughn\Documents\AgentCore\snapshots\weiwen-experts-20260909-01\sources\wechat-official-account-expert\`。
+- 2026-09-16 合并前回滚快照位于 `C:\Users\cughn\Documents\AgentCore\skill-archives\nannan-wechat-article\before-consolidation-20260916-144822\`。
 
 ## 已核对的来源指纹
 
@@ -21,9 +22,11 @@
 ## 迁移的能力
 
 - 原生专家的读者价值、内容支柱、标题 8 选 1、移动阅读与关系运营方法。
+- 原生专家的选题大纲、文风 DNA、正文合规检查和 humanizer 方法；标题情绪和对比改为可选，避免为了点击牺牲可信度。
 - 微文的正文检查点、当前版本事实审查、旧审查失效、固定模板/局部修改/样式事实隔离。
 - 微文的图片优先级、系列一致性、概念图标识与图片核对。
 - 微文 `plan_visual_direction -> preview_layout -> submit` 思路及确定性视觉门禁。
+- 长文按产品故事、架构解释、实操教程、案例叙事和个人思考选择编辑模式与视觉语法；三卡图文不再作为长文前置模板。
 - 微文运营面板的分母纪律、审稿覆盖、积压、失败、耗时、成本计量与缺失数据边界。
 
 ## 保留的个人能力与边界

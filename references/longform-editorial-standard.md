@@ -1,56 +1,150 @@
-# 公众号长文编辑与视觉标准
+# 公众号长文自适应编辑与视觉标准
 
-这份标准保留 2026-09-04 GenieX 返修中确认的深度边界，并吸收微文 2026-09-11 的视觉总编门禁：技术架构文章默认到职责、关系与产品后果，不自动深入源码；视觉先从本篇内容形成一个方向，再制作 HTML，不把历史文章样式或固定卡片墙套到所有主题。
+公众号长文是连续阅读产品，不是放大的三卡图文。先根据读者、素材和论证选择编辑模式，再确定结构、配图与整页视觉语法。历史文章只用于提取风格规律，不能成为所有主题的固定模板。
 
-## 历史参考不是固定模板
+## 先锁定编辑契约
 
-The immediately preceding long-form reference is:
+动笔前在内部写清：
 
-`C:/Users/cughn/Desktop/IP文章/2026-09-03_microduck_edge_ai_signal/article_local_preview.html`
+- 谁会在什么情境下读这篇文章；
+- 文章回答哪一个问题；
+- 胡楠楠愿意承担哪一句中心判断；
+- 哪个具体人物、设备、动作或事件能把问题讲清；
+- 最强判断由哪些证据支撑；
+- 读完后，读者获得什么新的理解或行动依据。
 
-它可借鉴的部分是实物/场景图、具体开头、短段落、克制强调和清楚收尾。只有用户要求连续性时才继承相近的暖白与橙色；其它主题应重新判断深浅、字体、配色、图像媒介和节奏。不得复制旧文章事实、未经证实的说法、具体修辞或发布授权。路径不存在时，检查最近一篇相关且已被接受的本地文章。
+标题、首屏和结尾必须兑现同一份契约。正文支撑不了的钩子直接删除。
 
-## Architecture-depth writing
+## 选择主编辑模式
 
-- Explain what each system is, what it owns, what it calls, what can be replaced, and how it changes a product scenario.
-- Use necessary architecture terms, defined in plain Chinese on first use. Prefer components and data flow over function names, fields, version lists, source paths and instructions.
-- Keep the named subject central. Related platforms clarify its place; do not turn the article into three unrelated product brochures.
-- Preserve detail through causal explanation and tradeoffs, not abbreviations and table density.
-- Use a real or clearly labeled illustrative scene to connect perception, understanding, decision, action and result.
-- Do not force a “3-minute start” or “what I tested” block into an architecture explainer. Put reproducible commands and source inspection into a separate technical appendix when useful.
-- Cite significant facts near their claims with a small unobtrusive reference; consolidate the full bibliography in a short source section before the hook/fixed ending. Repeated disclaimers and 20 inline document links can overwhelm the narrative.
-- Distinguish current integration from architectural possibility in one clear relevant passage. Never imply formal partnership, shared ownership or turnkey compatibility merely by drawing adjacent boxes.
+一篇文章只能有一个主模式，可以借用一个次模式，但不能把几套模板拼在一起。
 
-## 单一视觉方向
+### 产品或行业故事
 
-写 HTML 前先锁定并记录：一句编辑意图、深/浅主题、画布色、主文字色、弱文字色、强调色、标题字体逻辑、图片通栏/内收/混合节奏、直角/圆角倾向，以及首屏—中段—结尾的节奏。方向由读者、阅读目的和品牌气质决定，不向用户丢一组风格选项代替编辑判断。
+适用于新品、行业变化和商业机会。
 
-- 年轻产品可以大胆利落；技术文章优先解释关系；人物故事让细节和时间推进。这些是判断示例，不是三套模板。
-- 系统宋体/衬线可形成书页感，无衬线可强调清楚与力量；不用外链字体，必须有通用字体回退。
-- 真实官方图片合适时优先使用。抽象软件需要生成场景时标明概念图，不虚构品牌产品和测试结果。
-- 关系图通常一张足够，聚焦 3–5 个主组件，短标签、清楚箭头，不为显示专业塞入字段和后端名。
-- 图片承担不同任务：首屏场景、硬件/产品证据、机制关系、情绪转场。不能用重复文字卡凑数量。
-- 图文贴默认 3 张、最多 5 张；长文图片数量按内容决定，3 张有明确任务的图片通常已经足够。
-- 保留原始比例或明确裁切，不切掉产品关键细节和来源，不在没有标注时改变真实产品。
+推进方式：具体用户场景 -> 旧办法与代价 -> 新产品行为 -> 必要机制 -> 商业含义 -> 适用边界。
 
-## Typography and mobile acceptance
+视觉语法：优先真实产品或场景图，机制图只在确实帮助理解时出现。避免从头到尾罗列功能卡片。
 
-- WeChat body: inline styles, about 17px body text, line-height about 1.9, paragraphs separated by 14–18px. Use a reliable quoted Chinese/system sans-serif stack.
-- Headings about 22–24px; restrained accent marker; no forced 01–08 manual-like numbering for every section.
-- Do not turn every bold sentence into a box. Use a few emphasis panels where the reasoning benefits.
-- Default to left-aligned text to avoid stretched Chinese/English spacing; inspect actual glyph rendering and font fallback rather than trusting the CSS string.
-- Mobile at 390px: inspect the opening, a middle architecture passage, and the hook/author ending. Review diagram label readability at rendered size. Also inspect desktop width.
-- Quality gate includes reader fit and visual judgment. No overflow, valid metadata and a correctly counted footer are necessary but insufficient.
+### 架构解释
 
-## 最终排版门禁
+适用于解释系统职责、关系和产品后果，默认不到源码级。
 
-- 在最终安全 HTML 上核对画布色、主文字色和强调色是否真正落实，不能只存在于生图提示词或源 CSS。
-- 主文字、摘要和图注与背景对比度至少 `4.5:1`；长文主文字尽量接近 `7:1`。
-- 80 字以上正文段落不低于 `15px`，行高不低于 `1.65`；更常用的是 `16–17px` 与 `1.8–1.9`。
-- 连续 5 个纯正文段或约 760 字符没有图片、引语或章节转场时，检查节奏是否单一；不因此机械插图。
-- 长文至少呈现三种有内容作用的节奏元素，例如章节、图片、引语、清单/表格或重点模块。一个元素没有必要就不添加。
-- 阻断问题必须修复；非阻断审美建议最多做一轮有实质变化的整页修正。HTML 检查不是微信客户端截图验收，未做实机检查时要说明边界。
+推进方式：系统要解决的问题 -> 主要组件及各自职责 -> 信息或动作如何流动 -> 部署取舍 -> 场景后果 -> 当前限制。
 
-## Revision report
+视觉语法：通常一张 3-5 个组件的关系图，加真实设备或场景证据。术语第一次出现时用通俗中文解释；路径、字段、命令和函数名放技术附录，除非用户明确要求。
 
-When asked whether this skill caused a poor article, distinguish a rule conflict, a missing standard and execution mistakes. Back up before making a targeted skill correction. Deliver the regenerated article, describe concrete improvements briefly, and state publication status. Preserve prior versions for comparison.
+### 实操教程
+
+只有用户要求安装、复现、测试或实现时使用。
+
+推进方式：结果与前提 -> 最短可用路径 -> 关键决策 -> 验证 -> 常见失败 -> 后续扩展。
+
+视觉语法：步骤、截图和命令承担主要信息。准确和可复现优先于装饰。
+
+### 案例叙事
+
+适用于门店、工厂、客户项目或一个具体人物能承载观点的主题。
+
+推进方式：一个决定性时刻 -> 表面症状 -> 隐藏原因 -> 介入动作 -> 观察到的结果 -> 可复制部分与边界。
+
+视觉语法：纪实场景、关键观察和轻量时间线。不要把每个结论装进圆角框。
+
+### 个人思考
+
+适用于作者对事件、产品或经历的真实判断。
+
+推进方式：具体触发 -> 真实反应 -> 证据或反面情况 -> 修正后的判断 -> 对读者的含义。
+
+视觉语法：少标题、少模块、留白更大。一张有力量的图片可能比三张示意图更合适。
+
+## 提取轻量文风 DNA
+
+用户要求延续风格或已有被接受文章时，先检查 1-3 篇最相关样本，记录：
+
+- 作者与读者的距离；
+- 长短句比例与一句成段频率；
+- 常用开头、转折和收尾方式；
+- 小标题数量、层级和语气；
+- 场景、证据、解释和判断如何推进；
+- 标点、加粗、列表、引语和重点模块的使用频率；
+- 技术密度、类比习惯和不确定性表达。
+
+把观察改成可执行规则。继承节奏和论证方法，不复制旧事实、比喻或标志性句子。没有合格样本时，默认使用通俗中文、短段落、具体名词、克制强调。
+
+## 大纲要推进，不求对称
+
+每一节写清 `本节任务`、`核心判断`、`所需证据` 和 `如何自然进入下一节`。读者读完一节后，下一节应当回答自然产生的问题。
+
+章节不必等长。避免自动套用五段式、强凑三点，以及重复的“现象、原因、趋势、未来”。列表只用于步骤、比较、检查项和可复用清单；因果与故事优先写成连续正文。
+
+## 通俗、精炼、有人味
+
+- 从一个场景、具体观察或直接判断开始，删掉行业背景式开场。
+- 用明确的对象和动作代替抽象商业词。
+- 技术通过职责、信息流、动作和后果解释。
+- 长短句自然交替。短句落下判断，长句交代条件和边界。
+- 不确定性只在影响理解的位置说明一次，不把全文写成审计报告。
+- 引语、数字和强事实贴近来源。
+- 作者有真实材料时，可以写犹豫、分歧和不舒服的地方，不必假装所有结论都整齐。
+
+排版前做一次压缩：删除重复结论、空洞连接词、金句式口号、模糊权威、装饰性修饰、机械设问和聊天机器人痕迹。改写高频 AI 壳：`不是 X，而是 Y`、`值得注意的是`、`随着 AI 时代到来`、`赋能`、`重塑`、`颠覆`、`未来已来`。
+
+最后朗读全文。连续段落如果句长相近、开头一致、都用三项列举或都在设问自答，至少打破一处。去 AI 化不是随意加口语，而是让观察具体、节奏自然、判断属于作者。
+
+## 标题工作台
+
+先写标题契约：读者、对象、承诺、首屏证据。内部生成恰好 8 个候选，至少覆盖具体场景、实际结果、意外机制、认知修正四种机制。个人判断、可靠数字和真实冲突可以作为补充，不强制使用情绪和反差。
+
+按读者识别、具体性、真实性、首屏兑现、作者适配、实用或转发价值评估。保留平衡版、稳妥版和较强传播版，默认选平衡版。
+
+淘汰以下标题：堆叠多个钩子、依赖未经证实的群体情绪、夸大结果、照抄爆款句壳、必须看封面才读得懂。
+
+## 自适应版式
+
+版式从文章模式和信息层级出发。禁止先选主题，再把所有内容灌进同一套组件。
+
+| 文章需要 | 推荐处理 | 避免 |
+| --- | --- | --- |
+| 产品或案例故事 | 暖色或中性编辑风格，纪实首图，自然章节转场 | 功能卡片连续堆叠、虚构设备界面 |
+| 架构解释 | 冷静中性色或品牌色，一张关系图，少量定义模块 | 每个标题统一左边框、密集流程图 |
+| 实操教程 | 高对比功能性版式，编号步骤，可读的代码与截图 | 大段装饰引语、过大标题 |
+| 个人思考 | 安静配色、更多留白、更少标题和盒子 | 仪表盘风格、图标装饰 |
+| 证据型分析 | 克制图表、图注、来源和必要比较表 | 把每个数字做成彩色徽章 |
+
+每篇只用一组小型设计变量：一个画布色系、一个文字色系、一个强调色和一个弱化色。只有信息功能变化时才改变样式。
+
+微信长文默认参考值：
+
+- 正文约 `16.5-17px`，行高约 `1.8-1.95`；
+- 段间距约 `12-18px`，按句子密度调整；
+- 标题通常 `21-24px`，用字号、字重和留白表达层级，不反复使用同一种装饰；
+- 默认左对齐，检查中英文混排和字体回退；
+- 加粗只用于少数需要停顿或便于回找的位置；
+- 默认不超过 2 个重点框，文章模式确有需要时再增加；
+- 不把每段话、引语和小结都做成卡片。
+
+较长文章至少出现三种有内容作用的节奏状态：连续阅读、图片或证据、标题或少量重点停顿。三种状态不等于三套组件。
+
+## 图片只承担明确任务
+
+每张图只能承担一种主任务：建立场景、证明产品或事件真实、解释关系、展示结果、制造一次有意义的情绪停顿。
+
+有官方图或用户真实照片时优先使用。概念图必须标注，不能发明品牌硬件、产品界面、合作关系或测试结果。保留图片比例，裁切时不能丢失关键产品细节和来源。
+
+长文没有固定配图数量。个人思考可能一张足够，教程可能需要多张截图，三张有明确任务的图片通常能支撑一篇产品或架构长文。三卡图文是独立交付物，不能决定长文的图片数量和段落节奏。
+
+## 390px 与桌面验收
+
+最终微信 HTML 使用内联样式，正文不重复官方标题 H1。检查完整文章，而不是只看几个模块。
+
+在 `390px` 宽度依次检查：首屏承诺、最长标题换行、正文行距、中英文混排、图片裁切、图注、关系图标签、列表、引语、表格、重点框、最密集的中段、来源、往期回顾和固定结尾。
+
+同时检查桌面宽度，避免内容无意铺得过宽。通过条件包括：无横向溢出、无裁切、标签可读、重点框密度受控、视觉节奏有变化、版式与编辑模式一致。HTML 合法和元数据正确只是基础，不代表视觉验收完成。
+
+## 返修与状态证据
+
+旧文章被否决时，区分规则冲突、标准缺失和执行错误。保留旧版本，记录变更文件和哈希，再交付新版本。
+
+本地预览、上传素材、创建公众号草稿和正式发布是四种状态。任何本地文件或草稿 ID 都不能证明正式发布。

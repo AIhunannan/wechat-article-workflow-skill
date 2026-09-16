@@ -2,8 +2,8 @@
 name: nannan-wechat-article
 description: "Use for Hu Nannan's WeChat personal-IP strategy and execution: topic selection, article writing, evidence review, visual direction, image posts, draft delivery, publishing boundaries, growth analysis, account operations, and archive."
 metadata:
-  version: "2026.09.12"
-  weiwen_baseline: "workbuddy-native-v1 + editorial-visual-direction@8d1c776"
+  version: "2026.09.16-workbuddy-adaptive"
+  weiwen_baseline: "workbuddy-native-v1 + editorial-visual-direction@8d1c776 + adaptive-longform"
 ---
 
 # 胡楠楠公众号增长与内容运营
@@ -15,7 +15,7 @@ metadata:
 只读取当前任务需要的参考文件：
 
 - 写新稿、改稿、起标题或审稿：读 [editorial-production.md](references/editorial-production.md)。
-- 公众号长文排版、配图或视觉返修：再读 [longform-editorial-standard.md](references/longform-editorial-standard.md)。
+- 公众号长文写作、排版、配图或视觉返修：再读 [longform-editorial-standard.md](references/longform-editorial-standard.md)。长文必须先选编辑模式和整页视觉语法，不能由三卡图文机械扩写。
 - 每日选题、热点扫描、AI 产品或项目雷达：读 [daily-ai-radar.md](references/daily-ai-radar.md)。
 - 小绿书、小红书、公众号图片消息或多形态派生：读 [graphic-distribution.md](references/graphic-distribution.md)。
 - 制定运营策略、内容栏目、周/月复盘、增长诊断、菜单或自动回复：读 [growth-operations.md](references/growth-operations.md)。
@@ -61,8 +61,10 @@ metadata:
 吸收微文最新原生公众号专家的方法，但以楠哥的个人资产与当前工具为准：
 
 - 新稿内部完成 `选题与大纲 -> 正文 -> 8 个标题候选 -> 人性化润色`，不把计划、评分表和自检过程当作成稿交付。
+- 有已接受文章时，先提取轻量文风 DNA：语气、句长、段落配方、小标题密度、论证推进、标点和强调习惯。继承规则，不复制旧事实和句子。
 - 先保存完整正文检查点，再做事实审查、图片和排版。正文改动会使旧审查和旧预检失效。
 - 写 HTML 前锁定一个编辑意图和一套整页视觉方向；不把同一张卡片墙换色冒充主题适配。
+- 长文与图文贴是两种阅读产品。只有明确要求图片贴时才先做三卡；公众号长文从场景、判断和证据展开，不套用卡片密度。
 - 固定模板只填写授权槽位；局部修改只改选区；常用样式继承审美和表达，不继承旧事实。
 - 原生专家中的发布脚本、账号指标和营销目标不自动获得权限，也不当作真实效果承诺。
 
@@ -84,6 +86,7 @@ metadata:
 - 强事实有来源，时间敏感数字带日期；没有编造经历、效果、频率、金额或社会共识。
 - 图片各有明确任务；真实产品图、截图和生成概念图不混淆。
 - 长文排版落实统一视觉方向，手机阅读清楚，无重复标题、横向溢出、低对比文字或机械卡片墙。
+- 在 `390px` 手机宽度和桌面宽度检查完整文章，覆盖首屏、最长标题、最密正文、图片裁切、关系图标签、来源和固定结尾；结构合法不等于视觉验收通过。
 - 公众号固定结尾恰好出现一次且位于正文最后；平台状态与授权边界写清楚。
 
 ## 本地资源
